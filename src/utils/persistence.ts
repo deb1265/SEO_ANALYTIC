@@ -17,5 +17,5 @@ export const persistence: Persistence = {
   },
   clear() {
     return window.persistentStorage.clear();
-  },
+  }
 };
