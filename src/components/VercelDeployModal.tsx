@@ -1,5 +1,5 @@
 
-import React, { useState, useRef, useCallback } from 'react';
+import React, { useState, useRef, useCallback, useEffect } from 'react';
 import { ApiSettings, DeploymentStatus, VercelEnvVar } from '../types';
 import './VercelDeployModal.css';
 
@@ -149,6 +149,26 @@ const VercelDeployModal: React.FC<VercelDeployModalProps> = ({
     updated[index] = { ...updated[index], [field]: value };
     setEnvVars(updated);
   };
+
+  useEffect(() => {
+    // Ensure env vars stay in sync with any settings that were prefilled from Vercel environment variables
+    setEnvVars(prev => {
+      const defaults: VercelEnvVar[] = [
+        { key: 'OPENROUTER_API_KEY', value: settings.openRouterKey || '', target: ['production', 'preview'], type: 'secret' },
+        { key: 'DATAFORSEO_LOGIN', value: settings.dataForSeoLogin || '', target: ['production', 'preview'], type: 'secret' },
+        { key: 'DATAFORSEO_PASSWORD', value: settings.dataForSeoPassword || '', target: ['production', 'preview'], type: 'secret' }
+      ];
+
+      const preserved = prev.filter(env => !defaults.some(def => def.key === env.key));
+
+      const mergedDefaults = defaults.map(def => {
+        const existing = prev.find(env => env.key === def.key);
+        return { ...def, value: def.value || existing?.value || '' };
+      });
+
+      return [...mergedDefaults, ...preserved];
+    });
+  }, [settings.openRouterKey, settings.dataForSeoLogin, settings.dataForSeoPassword]);
 
   const removeEnvVar = (index: number) => {
     setEnvVars(envVars.filter((_, i) => i !== index));
