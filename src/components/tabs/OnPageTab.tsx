@@ -23,19 +23,19 @@ const OnPageTab: React.FC<OnPageTabProps> = ({ data }) => {
       <div className="analysis-card">
         <div className="card-header">
           <h4><i className="fas fa-heading text-blue"></i> Title Tag</h4>
-          <span className={`status-badge ${getStatusClass(titleLength >= 50 && titleLength <= 60)}`}>
-            {titleLength >= 50 && titleLength <= 60 ? 'Passed' : 'Needs Work'}
+          <span className={`status-badge ${getStatusClass(titleLength > 0)}`}>
+            {titleLength > 0 ? 'Passed' : 'Needs Work'}
           </span>
         </div>
         <div className="card-content">
           <p className="content-preview">{data.title || 'No title found'}</p>
           <div className="meta-info">
             <span>Length: {titleLength} characters</span>
-            <span>Optimal: 50-60</span>
+            <span>Often ~50–60; no fixed Google limit</span>
           </div>
           <div className="progress-track">
             <div 
-              className={`progress-fill ${titleLength >= 50 && titleLength <= 60 ? 'fill-green' : 'fill-yellow'}`}
+              className={`progress-fill ${titleLength > 0 ? 'fill-green' : 'fill-yellow'}`}
               style={{ width: `${Math.min(titleLength / 60 * 100, 100)}%` }}
             ></div>
           </div>
@@ -46,19 +46,19 @@ const OnPageTab: React.FC<OnPageTabProps> = ({ data }) => {
       <div className="analysis-card">
         <div className="card-header">
           <h4><i className="fas fa-align-left text-purple"></i> Meta Description</h4>
-          <span className={`status-badge ${getStatusClass(metaLength >= 150 && metaLength <= 160)}`}>
-            {metaLength >= 150 && metaLength <= 160 ? 'Passed' : 'Needs Work'}
+          <span className={`status-badge ${getStatusClass(metaLength > 0)}`}>
+            {metaLength > 0 ? 'Passed' : 'Needs Work'}
           </span>
         </div>
         <div className="card-content">
           <p className="content-preview">{data.metaDescription || 'No meta description found'}</p>
           <div className="meta-info">
             <span>Length: {metaLength} characters</span>
-            <span>Optimal: 150-160</span>
+            <span>Often ~150–160; no fixed Google limit</span>
           </div>
           <div className="progress-track">
             <div 
-              className={`progress-fill ${metaLength >= 150 && metaLength <= 160 ? 'fill-green' : 'fill-yellow'}`}
+              className={`progress-fill ${metaLength > 0 ? 'fill-green' : 'fill-yellow'}`}
               style={{ width: `${Math.min(metaLength / 160 * 100, 100)}%` }}
             ></div>
           </div>
@@ -69,8 +69,8 @@ const OnPageTab: React.FC<OnPageTabProps> = ({ data }) => {
       <div className="analysis-card">
         <div className="card-header">
           <h4><i className="fas fa-list-ol text-green"></i> Headings Structure</h4>
-          <span className={`status-badge ${getStatusClass(h1Count === 1)}`}>
-            {h1Count === 1 ? 'Passed' : 'Needs Work'}
+          <span className={`status-badge ${getStatusClass(h1Count > 0)}`}>
+            {h1Count > 0 ? 'Passed' : 'Needs Work'}
           </span>
         </div>
         <div className="card-content">
@@ -94,8 +94,8 @@ const OnPageTab: React.FC<OnPageTabProps> = ({ data }) => {
       <div className="analysis-card">
         <div className="card-header">
           <h4><i className="fas fa-image text-orange"></i> Image Optimization</h4>
-          <span className={`status-badge ${getStatusClass(altPercent >= 0.8)}`}>
-            {altPercent >= 0.8 ? 'Passed' : 'Needs Work'}
+          <span className={`status-badge ${getStatusClass(altPercent === 1)}`}>
+            {altPercent === 1 ? 'Passed' : 'Needs Work'}
           </span>
         </div>
         <div className="card-content">
@@ -131,8 +131,8 @@ const OnPageTab: React.FC<OnPageTabProps> = ({ data }) => {
               <span className="stat-text">External</span>
             </div>
             <div className="stat-box">
-              <span className="stat-number text-red">0</span>
-              <span className="stat-text">Issues</span>
+              <span className="stat-number">—</span>
+              <span className="stat-text">Broken links not checked</span>
             </div>
           </div>
         </div>

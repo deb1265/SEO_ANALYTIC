@@ -130,3 +130,12 @@
     font-size: 1.25rem;
   }
 }
+
+.account-btn { text-decoration:none; }
+@media(max-width:768px) {
+ .header-content { flex-wrap:wrap; gap:12px; }
+ .header-nav { display:flex; flex-wrap:wrap; gap:12px; font-size:.85rem; }
+ .header-nav .nav-link:first-child, .header-nav .deploy-link { display:none; }
+ .header { position:static; padding:1rem; }
+ .header-brand { flex-wrap:wrap; }
+}

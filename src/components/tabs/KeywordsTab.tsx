@@ -15,7 +15,7 @@ const KeywordsTab: React.FC<KeywordsTabProps> = ({ data, keywordSuggestions }) =
     <div className="tab-grid">
       {/* Primary Keywords */}
       <div className="analysis-card">
-        <h4><i className="fas fa-star text-yellow"></i> AI-Detected Keywords</h4>
+        <h4><i className="fas fa-star text-yellow"></i> Counted Body Terms</h4>
         <div className="keywords-list">
           {(ai.primaryKeywords || []).map((kw, i) => (
             <div key={i} className="keyword-item">
@@ -33,10 +33,10 @@ const KeywordsTab: React.FC<KeywordsTabProps> = ({ data, keywordSuggestions }) =
         </div>
       </div>
 
-      {/* AI Keyword Analysis */}
+      {/* Keyword Method */}
       <div className="analysis-card full-width">
-        <h4><i className="fas fa-robot text-purple"></i> AI Keyword Analysis</h4>
-        <p className="analysis-text">{ai.keywordAnalysis || 'AI analysis pending...'}</p>
+        <h4><i className="fas fa-robot text-purple"></i> Keyword Method</h4>
+        <p className="analysis-text">{ai.keywordAnalysis || 'No analysis available.'}</p>
       </div>
 
       {/* DataForSEO Suggestions */}
@@ -68,38 +68,9 @@ const KeywordsTab: React.FC<KeywordsTabProps> = ({ data, keywordSuggestions }) =
         </div>
       </div>
 
-      {/* Content Quality */}
       <div className="analysis-card">
-        <h4><i className="fas fa-spell-check text-blue"></i> Content Quality Score</h4>
-        <div className="quality-metrics">
-          <div className="quality-item">
-            <div className="quality-header">
-              <span>Readability</span>
-              <span>{ai.contentQuality?.readabilityScore || 0}%</span>
-            </div>
-            <div className="progress-track">
-              <div className="progress-fill fill-green" style={{ width: `${ai.contentQuality?.readabilityScore || 0}%` }}></div>
-            </div>
-          </div>
-          <div className="quality-item">
-            <div className="quality-header">
-              <span>Uniqueness</span>
-              <span>{ai.contentQuality?.uniquenessScore || 0}%</span>
-            </div>
-            <div className="progress-track">
-              <div className="progress-fill fill-blue" style={{ width: `${ai.contentQuality?.uniquenessScore || 0}%` }}></div>
-            </div>
-          </div>
-          <div className="quality-item">
-            <div className="quality-header">
-              <span>Topic Depth</span>
-              <span>{ai.contentQuality?.depthScore || 0}%</span>
-            </div>
-            <div className="progress-track">
-              <div className="progress-fill fill-purple" style={{ width: `${ai.contentQuality?.depthScore || 0}%` }}></div>
-            </div>
-          </div>
-        </div>
+        <h4>Content quality: manual review</h4>
+        <p>Readability, originality and topic depth are not scored. Originality requires comparison sources; keyword frequency is not evidence of quality or search demand.</p>
       </div>
     </div>
   );

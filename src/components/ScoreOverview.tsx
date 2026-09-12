@@ -14,6 +14,7 @@ const ScoreOverview: React.FC<ScoreOverviewProps> = ({ data }) => {
 
   useEffect(() => {
     let current = 0;
+    setAnimatedScore(0);
     const interval = setInterval(() => {
       if (current >= targetScore) {
         clearInterval(interval);
@@ -39,7 +40,7 @@ const ScoreOverview: React.FC<ScoreOverviewProps> = ({ data }) => {
     <div className="score-overview">
       {/* Overall Score */}
       <div className="overall-score-card">
-        <h3>Overall SEO Score</h3>
+        <h3>HTML Checklist Score</h3>
         <div className="score-ring-container">
           <svg className="score-ring" viewBox="0 0 100 100">
             <circle cx="50" cy="50" r="45" fill="none" stroke="#e5e7eb" strokeWidth="8"/>
@@ -66,14 +67,13 @@ const ScoreOverview: React.FC<ScoreOverviewProps> = ({ data }) => {
         </div>
         <p className={`score-label ${scoreLabel.color}`}>{scoreLabel.text}</p>
         <div className="confidence">
-          <span>AI Confidence: </span>
-          <span className="confidence-value">{ai.confidence || 90}%</span>
+          <span>Heuristic checklist, not a search ranking prediction.</span>
         </div>
       </div>
 
       {/* Category Scores */}
       <div className="category-scores-card">
-        <h3>AI Score Breakdown</h3>
+        <h3>Checklist Breakdown</h3>
         <div className="category-grid">
           <div className="category-item category-blue">
             <i className="fas fa-file-alt"></i>
@@ -84,7 +84,7 @@ const ScoreOverview: React.FC<ScoreOverviewProps> = ({ data }) => {
           <div className="category-item category-green">
             <i className="fas fa-key"></i>
             <div className="category-score">{ai.scores?.keywords?.score || 0}</div>
-            <div className="category-name">Keywords</div>
+            <div className="category-name">Content structure</div>
             <div className="category-max">/ 25 pts</div>
           </div>
           <div className="category-item category-purple">
@@ -96,7 +96,7 @@ const ScoreOverview: React.FC<ScoreOverviewProps> = ({ data }) => {
           <div className="category-item category-orange">
             <i className="fas fa-mobile-alt"></i>
             <div className="category-score">{ai.scores?.uxMobile?.score || 0}</div>
-            <div className="category-name">UX & Mobile</div>
+            <div className="category-name">HTML accessibility hints</div>
             <div className="category-max">/ 20 pts</div>
           </div>
         </div>
@@ -121,9 +121,9 @@ const ScoreOverview: React.FC<ScoreOverviewProps> = ({ data }) => {
           </div>
           <div className="stat-item">
             <div className="stat-value stat-red">
-              {(ai.recommendations || []).filter(r => r.priority === 'critical').length}
+              {(ai.recommendations || []).length}
             </div>
-            <div className="stat-label">Issues</div>
+            <div className="stat-label">Checks to review</div>
           </div>
         </div>
       </div>

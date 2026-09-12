@@ -11,7 +11,7 @@ const Toast: React.FC<ToastProps> = ({ show, message }) => {
   if (!show) return null;
 
   return (
-    <div className="toast">
+    <div className="toast" role="alert">
       <i className="fas fa-info-circle"></i>
       <span>{message}</span>
     </div>

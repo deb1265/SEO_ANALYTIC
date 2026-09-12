@@ -86,7 +86,7 @@ const ApiSettingsModal: React.FC<ApiSettingsModalProps> = ({ settings, onSave, o
 
               <div className="info-box">
                 <h4><i className="fas fa-info-circle"></i> AI Analysis</h4>
-                <p>OpenRouter provides AI-powered SEO analysis with access to multiple AI models. Your API key is stored locally.</p>
+                <p>OpenRouter provides AI-powered SEO analysis with access to multiple AI models. Credentials stay in memory until this page is refreshed. Only your model preference is saved. Never use public build-time variables for secrets.</p>
               </div>
             </>
           )}

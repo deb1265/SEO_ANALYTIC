@@ -8,73 +8,26 @@ interface TechnicalTabProps {
 }
 
 const TechnicalTab: React.FC<TechnicalTabProps> = ({ data }) => {
-  const ai = data.aiAnalysis;
-  const te = ai.technicalEstimates || { fcp: '1.5s', lcp: '2.0s', cls: '0.05', tti: '3.0s' };
-
-  const metrics = [
-    { name: 'First Contentful Paint (FCP)', value: te.fcp, target: 1.8 },
-    { name: 'Largest Contentful Paint (LCP)', value: te.lcp, target: 2.5 },
-    { name: 'Cumulative Layout Shift (CLS)', value: te.cls, target: 0.1 },
-    { name: 'Time to Interactive (TTI)', value: te.tti, target: 3.8 }
-  ];
 
   return (
     <div className="tab-grid">
-      {/* Core Web Vitals */}
       <div className="analysis-card">
-        <h4><i className="fas fa-tachometer-alt text-blue"></i> Core Web Vitals</h4>
-        <div className="vitals-list">
-          {metrics.map((m, i) => {
-            const numVal = parseFloat(m.value) || 0; 
-            const isGood = numVal <= m.target;
-            return (
-              <div key={i} className="vital-item">
-                <div className="vital-header">
-                  <span>{m.name}</span>
-                  <span className={isGood ? 'text-green' : 'text-yellow'}>{m.value}</span>
-                </div>
-                <div className="progress-track">
-                  <div 
-                    className={`progress-fill ${isGood ? 'fill-green' : 'fill-yellow'}`}
-                    style={{ width: `${Math.max(100 - (numVal / m.target * 50), 20)}%` }}
-                  ></div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+        <h4>Performance: not measured</h4>
+        <p>HTML alone cannot measure LCP, INP, CLS or loading time.</p>
+        <p><a href={`https://pagespeed.web.dev/analysis?url=${encodeURIComponent(data.url)}`} target="_blank" rel="noreferrer">Measure this URL with PageSpeed Insights</a></p>
       </div>
-
-      {/* Mobile & UX */}
       <div className="analysis-card">
-        <h4><i className="fas fa-mobile-alt text-green"></i> Mobile & UX</h4>
-        <div className="check-list">
-          <div className={`check-item ${data.viewport ? 'check-pass' : 'check-fail'}`}>
-            <i className={`fas fa-${data.viewport ? 'check' : 'times'}-circle`}></i>
-            Viewport meta tag
-          </div>
-          <div className={`check-item ${data.viewport ? 'check-pass' : 'check-fail'}`}>
-            <i className={`fas fa-${data.viewport ? 'check' : 'times'}-circle`}></i>
-            Responsive design
-          </div>
-          <div className="check-item check-pass">
-            <i className="fas fa-check-circle"></i>
-            Touch-friendly targets
-          </div>
-          <div className="check-item check-pass">
-            <i className="fas fa-check-circle"></i>
-            Readable font sizes
-          </div>
-        </div>
+        <h4>Mobile &amp; accessibility</h4>
+        <p>Viewport: {data.viewport || 'Not declared'}</p>
+        <p>Responsive layout, touch targets and font legibility require a rendered-page check and are not measured here.</p>
       </div>
-
       {/* Indexability */}
       <div className="analysis-card">
         <h4><i className="fas fa-robot text-indigo"></i> Indexability & Crawlability</h4>
         <div className="check-list">
-          <div className={`check-item ${!data.robots?.includes('noindex') ? 'check-pass' : 'check-fail'}`}>
-            <i className={`fas fa-${!data.robots?.includes('noindex') ? 'check' : 'times'}-circle`}></i>
-            Robots meta allows indexing
+          <div className={`check-item ${!/(?:^|[\s,;])(?:noindex|none)(?:$|[\s,;])/.test(data.robots) ? 'check-pass' : 'check-fail'}`}>
+            <i className={`fas fa-${!/(?:^|[\s,;])(?:noindex|none)(?:$|[\s,;])/.test(data.robots) ? 'check' : 'times'}-circle`}></i>
+            No blocking robots meta found (not proof of indexing)
           </div>
           <div className={`check-item ${data.canonical ? 'check-pass' : 'check-warn'}`}>
             <i className={`fas fa-${data.canonical ? 'check' : 'exclamation'}-circle`}></i>

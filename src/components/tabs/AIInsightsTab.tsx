@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { AnalysisData } from '../../types';
 import './Tabs.css';
+import { getChecks } from '../../utils/audit';
 
 interface AIInsightsTabProps {
   data: AnalysisData;
@@ -13,21 +14,21 @@ const AIInsightsTab: React.FC<AIInsightsTabProps> = ({ data }) => {
 
   const categories = [
     { name: 'On-Page SEO', score: ai.scores?.onPage?.score || 0, max: 25, passed: ai.scores?.onPage?.passed || [], failed: ai.scores?.onPage?.failed || [], color: 'blue' },
-    { name: 'Keywords & Content', score: ai.scores?.keywords?.score || 0, max: 25, passed: ai.scores?.keywords?.passed || [], failed: ai.scores?.keywords?.failed || [], color: 'green' },
+    { name: 'Content structure', score: ai.scores?.keywords?.score || 0, max: 25, passed: ai.scores?.keywords?.passed || [], failed: ai.scores?.keywords?.failed || [], color: 'green' },
     { name: 'Technical SEO', score: ai.scores?.technical?.score || 0, max: 30, passed: ai.scores?.technical?.passed || [], failed: ai.scores?.technical?.failed || [], color: 'purple' },
-    { name: 'UX & Mobile', score: ai.scores?.uxMobile?.score || 0, max: 20, passed: ai.scores?.uxMobile?.passed || [], failed: ai.scores?.uxMobile?.failed || [], color: 'orange' }
+    { name: 'HTML accessibility hints', score: ai.scores?.uxMobile?.score || 0, max: 20, passed: ai.scores?.uxMobile?.passed || [], failed: ai.scores?.uxMobile?.failed || [], color: 'orange' }
   ];
 
   return (
     <div className="ai-insights">
       {/* Executive Summary */}
       <div className="summary-card">
-        <h4><i className="fas fa-brain text-purple"></i> AI Executive Summary</h4>
+        <h4><i className="fas fa-brain text-purple"></i> Audit Summary</h4>
         <p className="summary-text">{ai.summary || 'Analysis complete.'}</p>
       </div>
 
       {/* Scoring Breakdown */}
-      <div className="breakdown-section">
+      <div className="breakdown-section" id="criteria-section">
         <h4><i className="fas fa-calculator text-blue"></i> Detailed Scoring Breakdown</h4>
         <div className="breakdown-grid">
           {categories.map((cat, i) => (
@@ -42,11 +43,11 @@ const AIInsightsTab: React.FC<AIInsightsTabProps> = ({ data }) => {
               <div className="breakdown-details">
                 <div className="breakdown-col">
                   <p className="text-green"><i className="fas fa-check"></i> Passed ({cat.passed.length})</p>
-                  <span>{cat.passed.slice(0, 5).join(', ') || 'None'}</span>
+                  <span>{cat.passed.join(', ') || 'None'}</span>
                 </div>
                 <div className="breakdown-col">
                   <p className="text-red"><i className="fas fa-times"></i> Failed ({cat.failed.length})</p>
-                  <span>{cat.failed.slice(0, 5).join(', ') || 'None'}</span>
+                  <span>{cat.failed.join(', ') || 'None'}</span>
                 </div>
               </div>
             </div>
@@ -54,6 +55,13 @@ const AIInsightsTab: React.FC<AIInsightsTabProps> = ({ data }) => {
         </div>
       </div>
 
+      <div className="analysis-card">
+        <h4>Evidence for all 15 checks</h4>
+        {getChecks(data).map(c => <details key={c.id} style={{padding:'10px 0'}}>
+          <summary>{c.passed ? 'Pass' : 'Review'} · {c.title} · {c.passed ? c.points : 0}/{c.points} pts</summary>
+          <p>{c.evidence}</p><p>{c.suggestion}</p>
+        </details>)}
+      </div>
       {/* Optimized Content Suggestions */}
       <div className="optimized-section">
         <div className="optimized-header">

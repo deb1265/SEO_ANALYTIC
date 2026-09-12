@@ -80,9 +80,9 @@ export interface KeywordData {
 }
 
 export interface ContentQuality {
-  readabilityScore: number;
-  uniquenessScore: number;
-  depthScore: number;
+  readabilityScore: number | null;
+  uniquenessScore: number | null;
+  depthScore: number | null;
 }
 
 export interface TechnicalEstimates {
@@ -128,6 +128,9 @@ export interface SectionReplacement {
 export interface AnalysisData extends ExtractedContent {
   aiAnalysis: AIAnalysis;
   analyzedAt: string;
+  analysisMode?: 'rules' | 'rules+ai';
+  source?: 'network' | 'import';
+  warnings?: string[];
   keywordSuggestions?: string[];
 }
 

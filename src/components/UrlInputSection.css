@@ -158,3 +158,11 @@
 .configure-btn:hover {
   background: #fde68a;
 }
+
+.audit-options { display:grid; gap:14px; margin-top:22px; color:#475569; line-height:1.6; }
+.audit-options label { display:block; }
+.audit-options input[type=checkbox] { margin-right:8px; }
+.html-import { display:grid; gap:10px; }
+.html-import textarea { width:100%; box-sizing:border-box; padding:12px; border:1px solid #cbd5e1; border-radius:8px; font-family:monospace; }
+.input-error { color:#b91c1c; padding:12px; background:#fef2f2; border-radius:8px; }
+button:disabled { opacity:.6; cursor:wait; }
