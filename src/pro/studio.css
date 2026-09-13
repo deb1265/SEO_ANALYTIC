@@ -57,6 +57,8 @@
   margin-bottom: 12px;
 }
 .s-sidebar {
+  overflow-y: auto;
+  overscroll-behavior: contain;
   position: fixed;
   left: 0;
   top: 0;
@@ -69,6 +71,7 @@
   flex-direction: column;
   z-index: 20;
 }
+.s-sidebar > * { flex-shrink: 0; }
 .s-brand {
   display: flex;
   gap: 12px;
@@ -1169,4 +1172,10 @@
 .studio .s-content li {
   font-size: 16px;
   line-height: 1.65;
+}
+
+@media (max-width: 820px) {
+  .s-sidebar .s-side-bottom { display: block; margin-top: 0; padding-top: 10px; }
+  .s-sidebar .s-side-bottom .s-model { display: none; }
+  .s-sidebar .s-side-bottom > button { margin-top: 0; font-size: 14px; }
 }
