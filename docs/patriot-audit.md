@@ -49,3 +49,13 @@ Downloaded the homepage directly from the origin (HTTP 200), then ran the reposi
 - No README, lockfile, CI or regression suite existed.
 
 These are addressed in this change. Public fetching can still be blocked; imported HTML may omit JavaScript-rendered content. The legacy deployment utility and real paid-provider credentials remain untested.
+
+## Studio expansion: September 13, 2026
+
+The professional baseline now samples the homepage, `/company/`, `/nyserda/` and `/go-solar/` (all HTTP 200). Muse Spark 1.3 generated a strategy with four competitors, 15 keyword opportunities, 12 recommendations, five content briefs and a 90-day plan. Recommendations were reviewed to reuse existing navigation-linked pages and avoid treating checklist scores as rankings. The model run reported approximately $0.093 in OpenRouter usage cost; future costs vary.
+
+Active comparison sources: [SUNation](https://www.sunation.com/), [Long Island Power Solutions](https://www.lipowersolutions.com/), [Green Team LI](https://www.greenteamli.com/) and adjacent roofing/solar-service provider [Marcor](https://marcorny.com/). [EmPower Solar](https://www.empower-solar.com/) announces it stopped operating and was excluded.
+
+Google's [documentation updates](https://developers.google.com/search/updates) confirm FAQ rich results were retired in May 2026. The plan recommends useful visible FAQs without selling a retired search feature.
+
+The saved baseline is `server/seed.json`. New visitors receive an owner-scoped copy. Reports include PDF and JSON export, editable branding/fee/notes, task status and due dates, and recorded keyword positions. No real rankings, traffic, search volume or Core Web Vitals have been supplied.

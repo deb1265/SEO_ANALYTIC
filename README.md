@@ -1,16 +1,14 @@
-# SEO Analytic
+# SEO Analytic Studio
 
-**Free, inspectable single-page SEO audits. Optional AI writing suggestions.**
+**Turn a website into a sourced SEO action plan and a branded client report.**
 
 [![CI](https://github.com/deb1265/SEO_ANALYTIC/actions/workflows/ci.yml/badge.svg)](https://github.com/deb1265/SEO_ANALYTIC/actions/workflows/ci.yml)
 
-Find missing page metadata, inspect headings and links, and export an audit with evidence for every check. The core audit runs without an API key, account, or paid service.
-
-![Patriot homepage audit preview](docs/audit-preview.png)
+A consulting workspace with transparent HTML checks, Muse Spark 1.3 strategy, competitor research, keyword-to-page mapping and persistent client progress. The original free HTML checker is included.
 
 ## Quick start
 
-Requires Node.js 22.12+ and npm.
+Requires Node.js 24+ and npm.
 
 ```sh
 git clone https://github.com/deb1265/SEO_ANALYTIC.git
@@ -19,18 +17,28 @@ npm ci
 npm run dev
 ```
 
-Open the local URL printed by Vite. Enter a public page URL and choose **Analyze page**.
-Most websites block cross-origin browser reads. You can explicitly enable the public-proxy fallback, or save the page HTML and choose **Import saved HTML**. Import keeps the audit local unless you separately enable AI.
+Open `http://localhost:5173`. Local development uses a local SQLite database and a development identity, bound to loopback. Production uses authenticated Sites identity and D1. The separate Vercel deployment uses `build:static` and preserves the free checker; the full workspace requires the Sites backend. The private deployment is [SEO Analytic Studio](https://seo-analytic-debashis.deb1265.chatgpt.site); access is restricted to its owner.
+
+To enable AI locally, set `OPENROUTER_API_KEY` in the server process environment. The default model is `meta/muse-spark-1.3`; set `OPENROUTER_MODEL` to override it. Never use a `VITE_` prefix for a secret. Without a key, measured audits and the included Patriot baseline still work.
 
 ## What you get
 
-- 15 deterministic HTML checks with expandable evidence and actionable suggestions.
-- Metadata, headings, body-term counts, internal/external links and nested JSON-LD types.
-- JSON and text reports you can share or compare.
-- Optional OpenRouter copy suggestions that cannot overwrite the factual checklist.
-- Clear unavailable states for performance, originality, actual indexing and mobile usability.
+- Sample up to five public HTML pages with robots and sitemap checks.
+- Fifteen deterministic HTML presence checks per page, with evidence.
+- Sourced competitor positioning and keyword intent, priority and page mapping.
+- Prioritized issues, original content briefs, suggested copy and a 30/60/90-day plan.
+- Saved reports, consultant notes, branding, fee and draft/reviewed/delivered status.
+- Charts for measured checklist results, body terms, task completion and recorded positions.
+- Branded, paginated PDF reports and JSON export.
+- A free single-page checker with authorized HTML import.
 
-The existing hosted app at [seo-analytic.vercel.app](https://seo-analytic.vercel.app) may still run the previous version until the owner deploys these changes. Use the quick start to try this version.
+The Patriot baseline samples four pages, with four sourced competitors, 15 keyword opportunities, 12 recommendations and five content briefs. It was prepared with Muse Spark 1.3 on September 13, 2026. [Case study](docs/patriot-audit.md).
+
+## Client workflow
+
+Create a report, review its evidence and sources, set your business name and report fee, and export the PDF. Record agreed tasks and observed keyword positions as work progresses. Re-audit with the same page sample for comparable checklist history.
+
+The fee field records a consulting price; it does not collect payment. Invoice and collect separately. Reports are private to the signed-in consultant; PDFs are the client deliverable. A public checkout or customer portal requires a separate billing and access integration.
 
 ## Scoring
 
@@ -48,14 +56,17 @@ Presence checks do not validate quality. Empty alt is correct for decorative ima
 Title and description character counts are guidance, not fixed Google limits: [title links](https://developers.google.com/search/docs/appearance/title-link), [snippets](https://developers.google.com/search/docs/appearance/snippet).
 Performance needs measurements: [Core Web Vitals](https://web.dev/articles/vitals). This app does **not** invent LCP, INP or CLS from HTML.
 
-## Privacy and optional services
+## Privacy, scope and server design
 
-- Direct fetching omits credentials and times out after 12 seconds per attempt. Only public hostnames are accepted; no IP literals, local hostnames or embedded credentials.
-- Public proxies are opt-in. AllOrigins and corsproxy.io receive the entire URL when used; do not submit private or signed URLs. Proxy HTML is not independently authenticated and may differ from the origin. Imports are the reliable fallback.
-- HTML is limited to 5 MB and parsed without executing scripts. JavaScript-rendered content may be absent. Bot-block pages can still look like HTML: inspect the extracted title/text before trusting results.
-- API credentials stay in memory until refresh. Only the AI model preference persists; legacy stored credentials are erased on startup.
-- Optional AI sends page text to OpenRouter. Optional DataForSEO requests send the title/domain when AI enhancements are enabled and provider credentials exist. Provider charges may apply. No API key is bundled through public environment variables.
-- The legacy Vercel deployment utility remains separate from auditing and requires a session token. It has not been exercised against a real Vercel account in this change. Prefer deploying your own repository through Vercel's dashboard.
+Production credentials are runtime secrets; the client receives only connection status and model name. AI sends public page content and the business brief to OpenRouter and its web-search provider. Charges apply to that connected account. Each owner can start up to ten reports per hour.
+
+The server accepts public HTTP(S) hostnames on standard ports, checks DNS for private addresses, validates redirects, caps pages at 2 MB and samples at most five pages. This is a bounded public-page crawler, not an exhaustive site audit. Robots restrictions are respected for crawling. If a website blocks requests, import an authorized snapshot. Unknown robots permissions prevent additional crawling. Page scripts are not executed, so rendered content may be absent.
+
+Reports and edits persist in D1 through owner-scoped queries and optimistic revisions. Cross-origin writes and unsigned API requests are rejected. Local development uses the same API with an explicit local identity and SQLite compatibility adapter. Reports are not stored in browser storage. Full page body excerpts are removed before saving; measured evidence and strategy remain.
+
+The original free checker runs locally and retains its opt-in public-proxy and memory-only AI settings. Those settings are separate from Studio's server connection. Public proxies receive the requested URL; imports stay local unless optional AI is enabled.
+
+Database schema: `db/schema.ts`; generated migrations: `drizzle/`. To change the schema, run `npm run db:generate` and commit SQL plus metadata. The Worker build embeds static assets and packages migrations under `dist/.openai/drizzle`. Sites applies the D1 migrations during publishing. `.sites-runtime/` contains disposable local state and is ignored.
 
 ## Reproduce an audit from HTML
 
@@ -72,11 +83,12 @@ The helper uses the exact same extraction and scoring functions as the browser. 
 ```sh
 npm test
 npm run build
+npm run test:server
 npx playwright install chromium
 npm run test:browser
 ```
 
-See [CONTRIBUTING.md](CONTRIBUTING.md), the issue templates and the [adoption roadmap](docs/maintainer-roadmap.md). Good next features include rendered-page measurements, multilingual term analysis and historical report comparison.
+See [CONTRIBUTING.md](CONTRIBUTING.md), the issue templates and the [adoption roadmap](docs/maintainer-roadmap.md). Useful next contributions include measured Search Console imports, multilingual term analysis and rendered-page measurements.
 
 ## Support the project
 

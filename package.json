@@ -4,18 +4,28 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
+    "dev": "node scripts/dev.mjs",
+    "build": "node scripts/clean.mjs && tsc && tsc -p tsconfig.server.json && vite build --outDir dist/client && node scripts/build-server.mjs",
     "preview": "vite preview",
     "test": "vitest run",
     "test:browser": "playwright test",
-    "audit:html": "node scripts/audit-html.mjs"
+    "audit:html": "node scripts/audit-html.mjs",
+    "db:generate": "drizzle-kit generate",
+    "test:server": "node --test tests/server.test.mjs",
+    "build:static": "tsc && vite build --mode static --outDir dist"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.7.2",
+    "drizzle-orm": "^0.45.2",
+    "jspdf": "^4.2.1",
+    "jspdf-autotable": "^5.0.8",
     "jszip": "^3.10.2",
+    "linkedom": "^0.18.13",
+    "lucide-react": "^1.45.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "recharts": "^3.10.1",
+    "robots-parser": "^3.0.1"
   },
   "devDependencies": {
     "@playwright/test": "^1.63.0",
@@ -23,12 +33,14 @@
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react": "^5.2.0",
+    "drizzle-kit": "^0.31.10",
+    "esbuild": "^0.28.2",
     "jsdom": "^26.1.0",
     "typescript": "^5.6.3",
     "vite": "^7.3.6",
     "vitest": "^4.1.11"
   },
   "engines": {
-    "node": ">=22.12.0"
+    "node": ">=24.0.0"
   }
 }

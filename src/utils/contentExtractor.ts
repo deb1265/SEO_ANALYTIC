@@ -42,12 +42,11 @@ export async function fetchPageContent(input: string, allowProxies = false): Pro
   throw new Error('Could not retrieve HTML. The website may block browser access. Import saved page HTML or enable public proxies for a public URL. No audit was generated.');
 }
 
-export function extractContentFromHTML(html: string, url: string): ExtractedContent {
+export function extractContentFromHTML(html: string, url: string, providedDocument?: Document): ExtractedContent {
   if (!html.trim()) throw new Error('Cannot audit an empty page.');
   if (new TextEncoder().encode(html).byteLength > MAX_HTML_BYTES) throw new Error('HTML exceeds 5 MB.');
   url = normalizeUrl(url);
-  const parser = new DOMParser();
-  const doc = parser.parseFromString(html || '<html><body></body></html>', 'text/html');
+  const doc = providedDocument || new DOMParser().parseFromString(html, 'text/html');
   const urlObj = new URL(url);
   const domain = urlObj.hostname;
   if (!doc.body?.textContent?.trim() && !doc.title) throw new Error('No page content found.');

@@ -1,6 +1,6 @@
 # Contributing
 
-Start with `npm ci`, then `npm test` and `npm run build`. Node 22.12+ is supported.
+Start with `npm ci`, then `npm test` and `npm run build`, then `npm run test:server`. Node 24+ is supported.
 For browser checks: `npx playwright install chromium` and `npm run test:browser`.
 
 Open a bug report with a minimal HTML example and expected output. Redact secrets and personal data.

@@ -1,0 +1,1627 @@
+{
+  "id": "02fba294-9518-4f83-9114-03c045bdc172",
+  "revision": 1,
+  "client": "Patriot Energy Solutions",
+  "url": "https://www.patriotenergysolution.com/",
+  "location": "Long Island and New York City, New York",
+  "focus": "Residential solar installation, home energy audits, insulation, weatherization and EmPower+ services.",
+  "createdAt": "2026-09-13T00:41:09.637Z",
+  "updatedAt": "2026-09-13T00:41:09.637Z",
+  "state": "draft",
+  "pages": [
+    {
+      "url": "https://www.patriotenergysolution.com/",
+      "title": "Affordable Solar Panels Near You in Long Island and NYC",
+      "description": "Get high-quality solar panel installations and energy efficiency upgrades from Patriot Energy Solutions. We provide tailored solutions for homes in Long Island and NYC.",
+      "h1": [
+        "Reliable Energy Solutions for Your Home Made Simple"
+      ],
+      "score": 95,
+      "scores": {
+        "onPage": {
+          "score": 25,
+          "passed": [
+            "title",
+            "description",
+            "h1"
+          ],
+          "failed": []
+        },
+        "keywords": {
+          "score": 25,
+          "passed": [
+            "body",
+            "paragraphs",
+            "subheadings",
+            "internal-links"
+          ],
+          "failed": []
+        },
+        "technical": {
+          "score": 30,
+          "passed": [
+            "https",
+            "canonical",
+            "index-meta",
+            "schema",
+            "open-graph"
+          ],
+          "failed": []
+        },
+        "uxMobile": {
+          "score": 15,
+          "passed": [
+            "viewport",
+            "language"
+          ],
+          "failed": [
+            "image-alt"
+          ]
+        }
+      },
+      "wordCount": 1323,
+      "images": 30,
+      "missingAlt": 12,
+      "canonical": "https://www.patriotenergysolution.com/",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "schemas": [
+        "LocalBusiness",
+        "PostalAddress",
+        "GeoCoordinates",
+        "OpeningHoursSpecification",
+        "Organization",
+        "ImageObject"
+      ],
+      "checks": [
+        {
+          "id": "title",
+          "category": "onPage",
+          "points": 10,
+          "passed": true,
+          "title": "Page title",
+          "evidence": "Affordable Solar Panels Near You in Long Island and NYC",
+          "suggestion": "Write a clear title describing this page."
+        },
+        {
+          "id": "description",
+          "category": "onPage",
+          "points": 10,
+          "passed": true,
+          "title": "Meta description",
+          "evidence": "Get high-quality solar panel installations and energy efficiency upgrades from Patriot Energy Solutions. We provide tailored solutions for homes in Long Island and NYC.",
+          "suggestion": "Add a relevant summary. Character counts are guidance, not a Google limit."
+        },
+        {
+          "id": "h1",
+          "category": "onPage",
+          "points": 5,
+          "passed": true,
+          "title": "Main heading",
+          "evidence": "1 H1 headings",
+          "suggestion": "Add a descriptive main heading."
+        },
+        {
+          "id": "body",
+          "category": "keywords",
+          "points": 10,
+          "passed": true,
+          "title": "Extractable body text",
+          "evidence": "1323 whitespace-separated words",
+          "suggestion": "Ensure meaningful page text is available in the HTML."
+        },
+        {
+          "id": "paragraphs",
+          "category": "keywords",
+          "points": 5,
+          "passed": true,
+          "title": "Descriptive paragraphs",
+          "evidence": "14 paragraphs longer than 30 characters",
+          "suggestion": "Use descriptive paragraphs when appropriate for this page."
+        },
+        {
+          "id": "subheadings",
+          "category": "keywords",
+          "points": 5,
+          "passed": true,
+          "title": "Content sections",
+          "evidence": "8 H2 headings",
+          "suggestion": "Use section headings when they help readers navigate."
+        },
+        {
+          "id": "internal-links",
+          "category": "keywords",
+          "points": 5,
+          "passed": true,
+          "title": "Internal navigation",
+          "evidence": "59 internal links",
+          "suggestion": "Link to relevant pages on your site."
+        },
+        {
+          "id": "https",
+          "category": "technical",
+          "points": 5,
+          "passed": true,
+          "title": "HTTPS URL",
+          "evidence": "https://www.patriotenergysolution.com/",
+          "suggestion": "Use HTTPS and check redirects separately."
+        },
+        {
+          "id": "canonical",
+          "category": "technical",
+          "points": 5,
+          "passed": true,
+          "title": "Canonical declaration",
+          "evidence": "https://www.patriotenergysolution.com/",
+          "suggestion": "Review and declare the preferred URL for this page."
+        },
+        {
+          "id": "index-meta",
+          "category": "technical",
+          "points": 10,
+          "passed": true,
+          "title": "No blocking robots meta",
+          "evidence": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+          "suggestion": "If this page should be indexed, review its noindex directive. HTTP headers and robots.txt need separate checks."
+        },
+        {
+          "id": "schema",
+          "category": "technical",
+          "points": 5,
+          "passed": true,
+          "title": "Structured data types",
+          "evidence": "LocalBusiness, PostalAddress, GeoCoordinates, OpeningHoursSpecification, Organization, ImageObject",
+          "suggestion": "Consider applicable structured data and validate it with Google\u2019s Rich Results Test."
+        },
+        {
+          "id": "open-graph",
+          "category": "technical",
+          "points": 5,
+          "passed": true,
+          "title": "Social title",
+          "evidence": "Home",
+          "suggestion": "Add an Open Graph title for shared links."
+        },
+        {
+          "id": "viewport",
+          "category": "uxMobile",
+          "points": 10,
+          "passed": true,
+          "title": "Device-width viewport",
+          "evidence": "width=device-width, initial-scale=1",
+          "suggestion": "Use a device-width viewport; test the rendered layout separately."
+        },
+        {
+          "id": "language",
+          "category": "uxMobile",
+          "points": 5,
+          "passed": true,
+          "title": "Document language",
+          "evidence": "en-US",
+          "suggestion": "Declare the document language on the html element."
+        },
+        {
+          "id": "image-alt",
+          "category": "uxMobile",
+          "points": 5,
+          "passed": false,
+          "title": "Image descriptions to review",
+          "evidence": "12 images with missing or empty alt",
+          "suggestion": "Describe informative images. Empty alt is correct for decorative images; review manually."
+        }
+      ],
+      "terms": [
+        {
+          "word": "energy",
+          "count": 39,
+          "density": "2.92%"
+        },
+        {
+          "word": "solar",
+          "count": 29,
+          "density": "2.17%"
+        },
+        {
+          "word": "solutions",
+          "count": 18,
+          "density": "1.35%"
+        },
+        {
+          "word": "patriot",
+          "count": 15,
+          "density": "1.12%"
+        },
+        {
+          "word": "home",
+          "count": 13,
+          "density": "0.97%"
+        },
+        {
+          "word": "services",
+          "count": 12,
+          "density": "0.90%"
+        },
+        {
+          "word": "efficiency",
+          "count": 10,
+          "density": "0.75%"
+        },
+        {
+          "word": "installation",
+          "count": 10,
+          "density": "0.75%"
+        },
+        {
+          "word": "long",
+          "count": 9,
+          "density": "0.67%"
+        },
+        {
+          "word": "company",
+          "count": 8,
+          "density": "0.60%"
+        },
+        {
+          "word": "panel",
+          "count": 8,
+          "density": "0.60%"
+        },
+        {
+          "word": "island",
+          "count": 7,
+          "density": "0.52%"
+        }
+      ],
+      "status": 200,
+      "fetchMs": 0,
+      "bodyExcerpt": ""
+    },
+    {
+      "url": "https://www.patriotenergysolution.com/company/",
+      "title": "Affordable Solar Energy for Your Long Island or NYC Home",
+      "description": "Discover the power of solar energy with Patriot Energy Solutions. We offer affordable, tailored solar power solutions for Long Island and NYC homeowners.",
+      "h1": [
+        "Patriot Energy Solutions: Pioneering Solar Energy for Long Island and NYC Homeowners"
+      ],
+      "score": 100,
+      "scores": {
+        "onPage": {
+          "score": 25,
+          "passed": [
+            "title",
+            "description",
+            "h1"
+          ],
+          "failed": []
+        },
+        "keywords": {
+          "score": 25,
+          "passed": [
+            "body",
+            "paragraphs",
+            "subheadings",
+            "internal-links"
+          ],
+          "failed": []
+        },
+        "technical": {
+          "score": 30,
+          "passed": [
+            "https",
+            "canonical",
+            "index-meta",
+            "schema",
+            "open-graph"
+          ],
+          "failed": []
+        },
+        "uxMobile": {
+          "score": 20,
+          "passed": [
+            "viewport",
+            "language",
+            "image-alt"
+          ],
+          "failed": []
+        }
+      },
+      "wordCount": 671,
+      "images": 17,
+      "missingAlt": 0,
+      "canonical": "https://www.patriotenergysolution.com/company/",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "schemas": [
+        "LocalBusiness",
+        "PostalAddress",
+        "GeoCoordinates",
+        "OpeningHoursSpecification"
+      ],
+      "checks": [
+        {
+          "id": "title",
+          "category": "onPage",
+          "points": 10,
+          "passed": true,
+          "title": "Page title",
+          "evidence": "Affordable Solar Energy for Your Long Island or NYC Home",
+          "suggestion": "Write a clear title describing this page."
+        },
+        {
+          "id": "description",
+          "category": "onPage",
+          "points": 10,
+          "passed": true,
+          "title": "Meta description",
+          "evidence": "Discover the power of solar energy with Patriot Energy Solutions. We offer affordable, tailored solar power solutions for Long Island and NYC homeowners.",
+          "suggestion": "Add a relevant summary. Character counts are guidance, not a Google limit."
+        },
+        {
+          "id": "h1",
+          "category": "onPage",
+          "points": 5,
+          "passed": true,
+          "title": "Main heading",
+          "evidence": "1 H1 headings",
+          "suggestion": "Add a descriptive main heading."
+        },
+        {
+          "id": "body",
+          "category": "keywords",
+          "points": 10,
+          "passed": true,
+          "title": "Extractable body text",
+          "evidence": "671 whitespace-separated words",
+          "suggestion": "Ensure meaningful page text is available in the HTML."
+        },
+        {
+          "id": "paragraphs",
+          "category": "keywords",
+          "points": 5,
+          "passed": true,
+          "title": "Descriptive paragraphs",
+          "evidence": "9 paragraphs longer than 30 characters",
+          "suggestion": "Use descriptive paragraphs when appropriate for this page."
+        },
+        {
+          "id": "subheadings",
+          "category": "keywords",
+          "points": 5,
+          "passed": true,
+          "title": "Content sections",
+          "evidence": "6 H2 headings",
+          "suggestion": "Use section headings when they help readers navigate."
+        },
+        {
+          "id": "internal-links",
+          "category": "keywords",
+          "points": 5,
+          "passed": true,
+          "title": "Internal navigation",
+          "evidence": "51 internal links",
+          "suggestion": "Link to relevant pages on your site."
+        },
+        {
+          "id": "https",
+          "category": "technical",
+          "points": 5,
+          "passed": true,
+          "title": "HTTPS URL",
+          "evidence": "https://www.patriotenergysolution.com/company/",
+          "suggestion": "Use HTTPS and check redirects separately."
+        },
+        {
+          "id": "canonical",
+          "category": "technical",
+          "points": 5,
+          "passed": true,
+          "title": "Canonical declaration",
+          "evidence": "https://www.patriotenergysolution.com/company/",
+          "suggestion": "Review and declare the preferred URL for this page."
+        },
+        {
+          "id": "index-meta",
+          "category": "technical",
+          "points": 10,
+          "passed": true,
+          "title": "No blocking robots meta",
+          "evidence": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+          "suggestion": "If this page should be indexed, review its noindex directive. HTTP headers and robots.txt need separate checks."
+        },
+        {
+          "id": "schema",
+          "category": "technical",
+          "points": 5,
+          "passed": true,
+          "title": "Structured data types",
+          "evidence": "LocalBusiness, PostalAddress, GeoCoordinates, OpeningHoursSpecification",
+          "suggestion": "Consider applicable structured data and validate it with Google\u2019s Rich Results Test."
+        },
+        {
+          "id": "open-graph",
+          "category": "technical",
+          "points": 5,
+          "passed": true,
+          "title": "Social title",
+          "evidence": "Company",
+          "suggestion": "Add an Open Graph title for shared links."
+        },
+        {
+          "id": "viewport",
+          "category": "uxMobile",
+          "points": 10,
+          "passed": true,
+          "title": "Device-width viewport",
+          "evidence": "width=device-width, initial-scale=1",
+          "suggestion": "Use a device-width viewport; test the rendered layout separately."
+        },
+        {
+          "id": "language",
+          "category": "uxMobile",
+          "points": 5,
+          "passed": true,
+          "title": "Document language",
+          "evidence": "en-US",
+          "suggestion": "Declare the document language on the html element."
+        },
+        {
+          "id": "image-alt",
+          "category": "uxMobile",
+          "points": 5,
+          "passed": true,
+          "title": "Image descriptions to review",
+          "evidence": "0 images with missing or empty alt",
+          "suggestion": "Describe informative images. Empty alt is correct for decorative images; review manually."
+        }
+      ],
+      "terms": [
+        {
+          "word": "solar",
+          "count": 32,
+          "density": "4.63%"
+        },
+        {
+          "word": "energy",
+          "count": 27,
+          "density": "3.91%"
+        },
+        {
+          "word": "solutions",
+          "count": 17,
+          "density": "2.46%"
+        },
+        {
+          "word": "long",
+          "count": 13,
+          "density": "1.88%"
+        },
+        {
+          "word": "island",
+          "count": 12,
+          "density": "1.74%"
+        },
+        {
+          "word": "patriot",
+          "count": 12,
+          "density": "1.74%"
+        },
+        {
+          "word": "nyc",
+          "count": 10,
+          "density": "1.45%"
+        },
+        {
+          "word": "home",
+          "count": 8,
+          "density": "1.16%"
+        },
+        {
+          "word": "installation",
+          "count": 8,
+          "density": "1.16%"
+        },
+        {
+          "word": "new",
+          "count": 6,
+          "density": "0.87%"
+        },
+        {
+          "word": "power",
+          "count": 6,
+          "density": "0.87%"
+        },
+        {
+          "word": "experts",
+          "count": 5,
+          "density": "0.72%"
+        }
+      ],
+      "status": 200,
+      "fetchMs": 0,
+      "bodyExcerpt": ""
+    },
+    {
+      "url": "https://www.patriotenergysolution.com/nyserda/",
+      "title": "Maximize Energy Efficiency with a Free Home Energy Assessment",
+      "description": "Lower your electricity bills with a free home energy assessment. Discover energy-saving solutions to reduce waste and save money on utility bills.",
+      "h1": [
+        "Transform Your Home: Save Money and Elevate Comfort with NYSERDA's Free Energy Efficiency Upgrades with Empower+ program"
+      ],
+      "score": 100,
+      "scores": {
+        "onPage": {
+          "score": 25,
+          "passed": [
+            "title",
+            "description",
+            "h1"
+          ],
+          "failed": []
+        },
+        "keywords": {
+          "score": 25,
+          "passed": [
+            "body",
+            "paragraphs",
+            "subheadings",
+            "internal-links"
+          ],
+          "failed": []
+        },
+        "technical": {
+          "score": 30,
+          "passed": [
+            "https",
+            "canonical",
+            "index-meta",
+            "schema",
+            "open-graph"
+          ],
+          "failed": []
+        },
+        "uxMobile": {
+          "score": 20,
+          "passed": [
+            "viewport",
+            "language",
+            "image-alt"
+          ],
+          "failed": []
+        }
+      },
+      "wordCount": 415,
+      "images": 11,
+      "missingAlt": 0,
+      "canonical": "https://www.patriotenergysolution.com/nyserda/",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "schemas": [
+        "LocalBusiness",
+        "PostalAddress",
+        "GeoCoordinates",
+        "OpeningHoursSpecification"
+      ],
+      "checks": [
+        {
+          "id": "title",
+          "category": "onPage",
+          "points": 10,
+          "passed": true,
+          "title": "Page title",
+          "evidence": "Maximize Energy Efficiency with a Free Home Energy Assessment",
+          "suggestion": "Write a clear title describing this page."
+        },
+        {
+          "id": "description",
+          "category": "onPage",
+          "points": 10,
+          "passed": true,
+          "title": "Meta description",
+          "evidence": "Lower your electricity bills with a free home energy assessment. Discover energy-saving solutions to reduce waste and save money on utility bills.",
+          "suggestion": "Add a relevant summary. Character counts are guidance, not a Google limit."
+        },
+        {
+          "id": "h1",
+          "category": "onPage",
+          "points": 5,
+          "passed": true,
+          "title": "Main heading",
+          "evidence": "1 H1 headings",
+          "suggestion": "Add a descriptive main heading."
+        },
+        {
+          "id": "body",
+          "category": "keywords",
+          "points": 10,
+          "passed": true,
+          "title": "Extractable body text",
+          "evidence": "415 whitespace-separated words",
+          "suggestion": "Ensure meaningful page text is available in the HTML."
+        },
+        {
+          "id": "paragraphs",
+          "category": "keywords",
+          "points": 5,
+          "passed": true,
+          "title": "Descriptive paragraphs",
+          "evidence": "5 paragraphs longer than 30 characters",
+          "suggestion": "Use descriptive paragraphs when appropriate for this page."
+        },
+        {
+          "id": "subheadings",
+          "category": "keywords",
+          "points": 5,
+          "passed": true,
+          "title": "Content sections",
+          "evidence": "3 H2 headings",
+          "suggestion": "Use section headings when they help readers navigate."
+        },
+        {
+          "id": "internal-links",
+          "category": "keywords",
+          "points": 5,
+          "passed": true,
+          "title": "Internal navigation",
+          "evidence": "50 internal links",
+          "suggestion": "Link to relevant pages on your site."
+        },
+        {
+          "id": "https",
+          "category": "technical",
+          "points": 5,
+          "passed": true,
+          "title": "HTTPS URL",
+          "evidence": "https://www.patriotenergysolution.com/nyserda/",
+          "suggestion": "Use HTTPS and check redirects separately."
+        },
+        {
+          "id": "canonical",
+          "category": "technical",
+          "points": 5,
+          "passed": true,
+          "title": "Canonical declaration",
+          "evidence": "https://www.patriotenergysolution.com/nyserda/",
+          "suggestion": "Review and declare the preferred URL for this page."
+        },
+        {
+          "id": "index-meta",
+          "category": "technical",
+          "points": 10,
+          "passed": true,
+          "title": "No blocking robots meta",
+          "evidence": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+          "suggestion": "If this page should be indexed, review its noindex directive. HTTP headers and robots.txt need separate checks."
+        },
+        {
+          "id": "schema",
+          "category": "technical",
+          "points": 5,
+          "passed": true,
+          "title": "Structured data types",
+          "evidence": "LocalBusiness, PostalAddress, GeoCoordinates, OpeningHoursSpecification",
+          "suggestion": "Consider applicable structured data and validate it with Google\u2019s Rich Results Test."
+        },
+        {
+          "id": "open-graph",
+          "category": "technical",
+          "points": 5,
+          "passed": true,
+          "title": "Social title",
+          "evidence": "NYSERDA",
+          "suggestion": "Add an Open Graph title for shared links."
+        },
+        {
+          "id": "viewport",
+          "category": "uxMobile",
+          "points": 10,
+          "passed": true,
+          "title": "Device-width viewport",
+          "evidence": "width=device-width, initial-scale=1",
+          "suggestion": "Use a device-width viewport; test the rendered layout separately."
+        },
+        {
+          "id": "language",
+          "category": "uxMobile",
+          "points": 5,
+          "passed": true,
+          "title": "Document language",
+          "evidence": "en-US",
+          "suggestion": "Declare the document language on the html element."
+        },
+        {
+          "id": "image-alt",
+          "category": "uxMobile",
+          "points": 5,
+          "passed": true,
+          "title": "Image descriptions to review",
+          "evidence": "0 images with missing or empty alt",
+          "suggestion": "Describe informative images. Empty alt is correct for decorative images; review manually."
+        }
+      ],
+      "terms": [
+        {
+          "word": "energy",
+          "count": 14,
+          "density": "3.22%"
+        },
+        {
+          "word": "home",
+          "count": 10,
+          "density": "2.30%"
+        },
+        {
+          "word": "free",
+          "count": 8,
+          "density": "1.84%"
+        },
+        {
+          "word": "new",
+          "count": 8,
+          "density": "1.84%"
+        },
+        {
+          "word": "nyserda",
+          "count": 8,
+          "density": "1.84%"
+        },
+        {
+          "word": "installation",
+          "count": 7,
+          "density": "1.61%"
+        },
+        {
+          "word": "assessment",
+          "count": 6,
+          "density": "1.38%"
+        },
+        {
+          "word": "program",
+          "count": 6,
+          "density": "1.38%"
+        },
+        {
+          "word": "efficiency",
+          "count": 5,
+          "density": "1.15%"
+        },
+        {
+          "word": "empower",
+          "count": 5,
+          "density": "1.15%"
+        },
+        {
+          "word": "york",
+          "count": 5,
+          "density": "1.15%"
+        },
+        {
+          "word": "954",
+          "count": 3,
+          "density": "0.69%"
+        }
+      ],
+      "status": 200,
+      "fetchMs": 0,
+      "bodyExcerpt": ""
+    },
+    {
+      "url": "https://www.patriotenergysolution.com/go-solar/",
+      "title": "The Benefits of Solar Energy: Save Money and Take Control",
+      "description": "Take back control of your electricity bill with solar energy. Save money and reduce your monthly costs with solar panels for homes.",
+      "h1": [
+        "Discover the Benefits of Solar Energy for Your Home!"
+      ],
+      "score": 100,
+      "scores": {
+        "onPage": {
+          "score": 25,
+          "passed": [
+            "title",
+            "description",
+            "h1"
+          ],
+          "failed": []
+        },
+        "keywords": {
+          "score": 25,
+          "passed": [
+            "body",
+            "paragraphs",
+            "subheadings",
+            "internal-links"
+          ],
+          "failed": []
+        },
+        "technical": {
+          "score": 30,
+          "passed": [
+            "https",
+            "canonical",
+            "index-meta",
+            "schema",
+            "open-graph"
+          ],
+          "failed": []
+        },
+        "uxMobile": {
+          "score": 20,
+          "passed": [
+            "viewport",
+            "language",
+            "image-alt"
+          ],
+          "failed": []
+        }
+      },
+      "wordCount": 835,
+      "images": 11,
+      "missingAlt": 0,
+      "canonical": "https://www.patriotenergysolution.com/go-solar/",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "schemas": [
+        "LocalBusiness",
+        "PostalAddress",
+        "GeoCoordinates",
+        "OpeningHoursSpecification"
+      ],
+      "checks": [
+        {
+          "id": "title",
+          "category": "onPage",
+          "points": 10,
+          "passed": true,
+          "title": "Page title",
+          "evidence": "The Benefits of Solar Energy: Save Money and Take Control",
+          "suggestion": "Write a clear title describing this page."
+        },
+        {
+          "id": "description",
+          "category": "onPage",
+          "points": 10,
+          "passed": true,
+          "title": "Meta description",
+          "evidence": "Take back control of your electricity bill with solar energy. Save money and reduce your monthly costs with solar panels for homes.",
+          "suggestion": "Add a relevant summary. Character counts are guidance, not a Google limit."
+        },
+        {
+          "id": "h1",
+          "category": "onPage",
+          "points": 5,
+          "passed": true,
+          "title": "Main heading",
+          "evidence": "1 H1 headings",
+          "suggestion": "Add a descriptive main heading."
+        },
+        {
+          "id": "body",
+          "category": "keywords",
+          "points": 10,
+          "passed": true,
+          "title": "Extractable body text",
+          "evidence": "835 whitespace-separated words",
+          "suggestion": "Ensure meaningful page text is available in the HTML."
+        },
+        {
+          "id": "paragraphs",
+          "category": "keywords",
+          "points": 5,
+          "passed": true,
+          "title": "Descriptive paragraphs",
+          "evidence": "9 paragraphs longer than 30 characters",
+          "suggestion": "Use descriptive paragraphs when appropriate for this page."
+        },
+        {
+          "id": "subheadings",
+          "category": "keywords",
+          "points": 5,
+          "passed": true,
+          "title": "Content sections",
+          "evidence": "6 H2 headings",
+          "suggestion": "Use section headings when they help readers navigate."
+        },
+        {
+          "id": "internal-links",
+          "category": "keywords",
+          "points": 5,
+          "passed": true,
+          "title": "Internal navigation",
+          "evidence": "51 internal links",
+          "suggestion": "Link to relevant pages on your site."
+        },
+        {
+          "id": "https",
+          "category": "technical",
+          "points": 5,
+          "passed": true,
+          "title": "HTTPS URL",
+          "evidence": "https://www.patriotenergysolution.com/go-solar/",
+          "suggestion": "Use HTTPS and check redirects separately."
+        },
+        {
+          "id": "canonical",
+          "category": "technical",
+          "points": 5,
+          "passed": true,
+          "title": "Canonical declaration",
+          "evidence": "https://www.patriotenergysolution.com/go-solar/",
+          "suggestion": "Review and declare the preferred URL for this page."
+        },
+        {
+          "id": "index-meta",
+          "category": "technical",
+          "points": 10,
+          "passed": true,
+          "title": "No blocking robots meta",
+          "evidence": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+          "suggestion": "If this page should be indexed, review its noindex directive. HTTP headers and robots.txt need separate checks."
+        },
+        {
+          "id": "schema",
+          "category": "technical",
+          "points": 5,
+          "passed": true,
+          "title": "Structured data types",
+          "evidence": "LocalBusiness, PostalAddress, GeoCoordinates, OpeningHoursSpecification",
+          "suggestion": "Consider applicable structured data and validate it with Google\u2019s Rich Results Test."
+        },
+        {
+          "id": "open-graph",
+          "category": "technical",
+          "points": 5,
+          "passed": true,
+          "title": "Social title",
+          "evidence": "Go Solar",
+          "suggestion": "Add an Open Graph title for shared links."
+        },
+        {
+          "id": "viewport",
+          "category": "uxMobile",
+          "points": 10,
+          "passed": true,
+          "title": "Device-width viewport",
+          "evidence": "width=device-width, initial-scale=1",
+          "suggestion": "Use a device-width viewport; test the rendered layout separately."
+        },
+        {
+          "id": "language",
+          "category": "uxMobile",
+          "points": 5,
+          "passed": true,
+          "title": "Document language",
+          "evidence": "en-US",
+          "suggestion": "Declare the document language on the html element."
+        },
+        {
+          "id": "image-alt",
+          "category": "uxMobile",
+          "points": 5,
+          "passed": true,
+          "title": "Image descriptions to review",
+          "evidence": "0 images with missing or empty alt",
+          "suggestion": "Describe informative images. Empty alt is correct for decorative images; review manually."
+        }
+      ],
+      "terms": [
+        {
+          "word": "solar",
+          "count": 27,
+          "density": "3.17%"
+        },
+        {
+          "word": "energy",
+          "count": 22,
+          "density": "2.58%"
+        },
+        {
+          "word": "electricity",
+          "count": 10,
+          "density": "1.17%"
+        },
+        {
+          "word": "save",
+          "count": 9,
+          "density": "1.06%"
+        },
+        {
+          "word": "value",
+          "count": 9,
+          "density": "1.06%"
+        },
+        {
+          "word": "000",
+          "count": 7,
+          "density": "0.82%"
+        },
+        {
+          "word": "home",
+          "count": 6,
+          "density": "0.70%"
+        },
+        {
+          "word": "panels",
+          "count": 6,
+          "density": "0.70%"
+        },
+        {
+          "word": "property",
+          "count": 6,
+          "density": "0.70%"
+        },
+        {
+          "word": "system",
+          "count": 6,
+          "density": "0.70%"
+        },
+        {
+          "word": "average",
+          "count": 5,
+          "density": "0.59%"
+        },
+        {
+          "word": "bills",
+          "count": 5,
+          "density": "0.59%"
+        }
+      ],
+      "status": 200,
+      "fetchMs": 0,
+      "bodyExcerpt": ""
+    }
+  ],
+  "technical": {
+    "robotsUrl": "https://www.patriotenergysolution.com/robots.txt",
+    "robotsStatus": 200,
+    "sitemapUrl": "https://www.patriotenergysolution.com/sitemap_index.xml",
+    "sitemapStatus": 200,
+    "robotsNotes": [
+      "Allow/Disallow directives occur before the first User-agent group; review intended scope."
+    ]
+  },
+  "warnings": [
+    "Four public HTML pages sampled on 2026-09-13; HTTP 200 observed, fetch timings not retained. robots.txt and sitemap verified on 2026-09-12.",
+    "No Search Console, analytics, backlink, search-volume or Core Web Vitals data was connected.",
+    "Competitor positioning is based on public first-party pages, not measured search-result rankings."
+  ],
+  "strategy": {
+    "summary": "Patriot has the basic HTML foundations in the four sampled pages: HTTPS, titles, canonical declarations, structured data and extractable service content. The homepage passes 95/100 checklist points. This measures presence, not rankings, indexing or performance. The immediate priorities are trust and conversion: reconcile the company timeline and contact email, improve social metadata, and review testimonial-icon accessibility.\n\nUse distinct page roles for solar installation, home energy audits and EmPower+ guidance. Improve existing financing, testimonials and post-installation pages before creating competing URLs. Four active providers overlap with Patriot: SUNation and Long Island Power Solutions in solar, Green Team LI in home efficiency, and Marcor in adjacent roofing/solar service. Differentiate with clear processes, verified local project evidence and helpful service content.\n\nThe 90-day plan starts with factual corrections and measurement setup, then fills confirmed content gaps and evaluates recorded search and lead outcomes. Current incentive eligibility and savings claims require verification; no ranking improvement is promised.",
+    "strengths": [
+      "Dedicated service pages for solar benefits and NYSERDA/EmPower+ assessment plus company page provide a foundation for service-intent mapping",
+      "HTTPS pages with self-referencing canonicals, no blocking robots meta found, and LocalBusiness/Organization-type schema present in the HTML sample; actual indexability and indexing still need verification.",
+      "1,323-word homepage and 51-59 internal links per page suggest crawlable structure for deeper service/location architecture",
+      "Long Island/NYC geographic framing throughout matches stated service area",
+      "Lead forms, phone numbers, address and testimonials present for conversion and local trust"
+    ],
+    "risks": [
+      "Conflicting founding narrative (after Hurricane Sandy in 2012 vs Since 2014) undermines trust if left unresolved",
+      "Contact email domain inconsistency (body plural vs footer singular) risks lost leads and trust; verify correct mailbox",
+      "Generic social title Home and BBB-badge social image weaken click presentation; not a ranking factor alone",
+      "12 homepage images missing alt (reported as repeated testimonial icons) need manual decorative vs informative review, not keyword stuffing",
+      "Four-page sample cannot prove sitewide coverage; service/location gaps, duplicates, speed, and backlinks were not measured"
+    ],
+    "competitors": [
+      {
+        "name": "SUNation Energy",
+        "url": "https://www.sunation.com/",
+        "whyRelevant": "Overlaps residential solar, battery, roofing and Long Island/NYC geography including Suffolk, Nassau, Queens, Brooklyn and Staten Island",
+        "strength": "Observed positioning as long-tenured regional installer with residential, commercial, battery, EV and roofing sections and defined solar journey",
+        "opportunity": "Differentiate with dedicated audit/insulation/weatherization and EmPower+ explainer hubs that SUNation does not lead with",
+        "sourceUrl": "https://www.sunation.com/"
+      },
+      {
+        "name": "Long Island Power Solutions",
+        "url": "https://www.lipowersolutions.com/",
+        "whyRelevant": "Overlaps residential solar installation, financing, battery backup and Long Island service area",
+        "strength": "Observed positioning around residential solar savings, no-money-down financing language, monitoring and 25-year warranty messaging",
+        "opportunity": "Build clearer audit-to-insulation and EmPower+ qualification guidance plus location pages to cover non-solar intent",
+        "sourceUrl": "https://www.lipowersolutions.com/"
+      },
+      {
+        "name": "Green Team LI",
+        "url": "https://www.greenteamli.com/",
+        "whyRelevant": "Overlaps home energy audits, insulation, air sealing and Nassau/Suffolk/Queens service plus rebates guidance",
+        "strength": "Observed positioning as whole-home performance contractor starting every project with comprehensive audit",
+        "opportunity": "Counter with combined solar-plus-efficiency bundling pages and transparent process/qualification FAQs citing official programs",
+        "sourceUrl": "https://www.greenteamli.com/"
+      },
+      {
+        "name": "Marcor",
+        "url": "https://marcorny.com/",
+        "whyRelevant": "Adjacent overlap on roofing/solar service and Nassau/Suffolk plus Brooklyn/Queens coverage; relevant for roof-plus-solar intent",
+        "strength": "Observed positioning as 30-year roofing/exterior contractor with roof repair/replacement and solar service sections",
+        "opportunity": "Win efficiency-led demand with audit, insulation and weatherization depth Marcor does not emphasize",
+        "sourceUrl": "https://marcorny.com/"
+      }
+    ],
+    "keywordPlan": [
+      {
+        "keyword": "residential solar installation Long Island",
+        "intent": "Local commercial",
+        "priority": "High",
+        "cluster": "Solar install",
+        "targetPage": "https://www.patriotenergysolution.com/go-solar/",
+        "action": "Keep as primary solar hub; tighten title/H1 to location + service and add process, financing overview, FAQs",
+        "reasoning": "Hypothesis: highest commercial relevance to core service and area; needs one canonical page to avoid split with homepage"
+      },
+      {
+        "keyword": "solar panels NYC homes",
+        "intent": "Local commercial",
+        "priority": "High",
+        "cluster": "Solar install",
+        "targetPage": "Proposed /solar-installation-new-york-city/",
+        "action": "Create NYC-specific child page distinct from Long Island hub",
+        "reasoning": "Hypothesis: NYC borough intent differs on roofs, permitting and co-ops; separate page prevents cannibalization"
+      },
+      {
+        "keyword": "solar panels Long Island cost and savings",
+        "intent": "Informational",
+        "priority": "High",
+        "cluster": "Solar education",
+        "targetPage": "https://www.patriotenergysolution.com/go-solar/",
+        "action": "Add non-guaranteed savings explainer with verify-incentives disclaimer and CTA to consultation",
+        "reasoning": "Hypothesis: cost questions precede consultation; avoid specific dollar promises without verified sources"
+      },
+      {
+        "keyword": "home energy audit Long Island",
+        "intent": "Local commercial",
+        "priority": "High",
+        "cluster": "Audits",
+        "targetPage": "Proposed /home-energy-audit-long-island/",
+        "action": "Create dedicated audit page with scope, what technician checks, and next steps",
+        "reasoning": "Hypothesis: distinct intent from solar; dedicated page improves mapping and internal linking"
+      },
+      {
+        "keyword": "free home energy assessment NYSERDA",
+        "intent": "Informational",
+        "priority": "High",
+        "cluster": "EmPower+",
+        "targetPage": "https://www.patriotenergysolution.com/nyserda/",
+        "action": "Clarify program vs contractor role and link to official eligibility; remove stale income table unless verified current",
+        "reasoning": "Hypothesis: users seek qualification rules; accuracy risk if figures are outdated"
+      },
+      {
+        "keyword": "EmPower+ New York insulation weatherization",
+        "intent": "Local commercial",
+        "priority": "High",
+        "cluster": "EmPower+",
+        "targetPage": "https://www.patriotenergysolution.com/nyserda/",
+        "action": "Keep as EmPower+ hub; add services checklist, service-area list, and application assistance CTA",
+        "reasoning": "Hypothesis: bundles audit, insulation and air sealing intent under one assistance program"
+      },
+      {
+        "keyword": "attic insulation Long Island",
+        "intent": "Local commercial",
+        "priority": "Medium",
+        "cluster": "Insulation",
+        "targetPage": "Proposed /insulation/attic-insulation-long-island/",
+        "action": "Create service page covering attic, crawlspace, rim joist with audit tie-in",
+        "reasoning": "Hypothesis: specific service query converts better than generic efficiency copy"
+      },
+      {
+        "keyword": "air sealing and weatherization NYC",
+        "intent": "Local commercial",
+        "priority": "Medium",
+        "cluster": "Weatherization",
+        "targetPage": "Proposed /weatherization-air-sealing-nyc/",
+        "action": "Create NYC weatherization page with building-type notes and audit CTA",
+        "reasoning": "Hypothesis: drafty-home comfort intent is distinct from solar payback intent"
+      },
+      {
+        "keyword": "solar financing Long Island homeowners",
+        "intent": "Informational",
+        "priority": "Medium",
+        "cluster": "Solar education",
+        "targetPage": "https://www.patriotenergysolution.com/financing/",
+        "action": "Review and improve this existing navigation-linked page; its body was outside this four-page sample. Explain loan vs cash considerations generally; advise verifying tax/credit details with professionals",
+        "reasoning": "Hypothesis: financing questions block decisions; regulated claims need careful wording"
+      },
+      {
+        "keyword": "solar maintenance Long Island",
+        "intent": "Local commercial",
+        "priority": "Medium",
+        "cluster": "Solar care",
+        "targetPage": "https://www.patriotenergysolution.com/post-installation/",
+        "action": "Review and improve this existing navigation-linked page; its body was outside this four-page sample. Add post-install support, monitoring and service-request path",
+        "reasoning": "Hypothesis: post-install intent supports retention and orphan-system queries without overpromising"
+      },
+      {
+        "keyword": "Patriot Energy Solutions reviews",
+        "intent": "Navigational",
+        "priority": "Medium",
+        "cluster": "Brand trust",
+        "targetPage": "https://www.patriotenergysolution.com/testimonials/",
+        "action": "Review and improve this existing navigation-linked page; its body was outside this four-page sample. Consolidate testimonials with location and service labels and third-party profile links",
+        "reasoning": "Hypothesis: brand navigational intent needs one trustworthy proof page"
+      },
+      {
+        "keyword": "solar consultation Bay Shore NY",
+        "intent": "Transactional",
+        "priority": "Medium",
+        "cluster": "Conversion",
+        "targetPage": "https://www.patriotenergysolution.com/contact-us/",
+        "action": "Review and improve this existing navigation-linked page; its body was outside this four-page sample. Streamline form fields, clarify response time and consent language",
+        "reasoning": "Hypothesis: reducing friction near Bay Shore address may lift qualified inquiries"
+      },
+      {
+        "keyword": "insulation contractors Suffolk County NY",
+        "intent": "Local commercial",
+        "priority": "Low",
+        "cluster": "Insulation",
+        "targetPage": "Proposed /service-areas/suffolk-county/",
+        "action": "Add county hub linking to audit, insulation and EmPower+ pages",
+        "reasoning": "Hypothesis: county-level hub captures broader service-area intent"
+      },
+      {
+        "keyword": "solar installers Nassau County NY",
+        "intent": "Local commercial",
+        "priority": "Low",
+        "cluster": "Solar install",
+        "targetPage": "Proposed /service-areas/nassau-county/",
+        "action": "Add county hub with distinct local proof and FAQs",
+        "reasoning": "Hypothesis: mirrors Suffolk structure without duplicating copy"
+      },
+      {
+        "keyword": "energy efficient home upgrades Queens Brooklyn",
+        "intent": "Informational",
+        "priority": "Low",
+        "cluster": "Efficiency education",
+        "targetPage": "Proposed /guides/home-efficiency-upgrades-nyc-boroughs/",
+        "action": "Publish guide linking to audit and weatherization services",
+        "reasoning": "Hypothesis: borough renters/owners need education before service selection"
+      }
+    ],
+    "issues": [
+      {
+        "title": "Clarify the company founding timeline",
+        "severity": "High",
+        "category": "Content",
+        "evidence": "Manual review: homepage narrative references both post-2012 founding context and Since 2014 language",
+        "suggestion": "Choose one verified timeline, align homepage/company/footer, add source or milestone proof",
+        "effort": "Small",
+        "sourceUrl": "https://www.patriotenergysolution.com/"
+      },
+      {
+        "title": "Contact email domain mismatch",
+        "severity": "High",
+        "category": "Conversion",
+        "evidence": "Manual review: body copy uses plural domain while footer uses singular domain",
+        "suggestion": "Verify correct mailbox, standardize sitewide, test forms and mail delivery",
+        "effort": "Small",
+        "sourceUrl": "https://www.patriotenergysolution.com/"
+      },
+      {
+        "title": "Clarify homepage service pathways",
+        "severity": "High",
+        "category": "Content",
+        "evidence": "Homepage covers solar, EmPower+, insulation, audits and company history in 1,323 words",
+        "suggestion": "Make homepage a gateway; move depth to /go-solar/, /nyserda/, and new audit/insulation/location pages with one primary keyword each",
+        "effort": "Medium",
+        "sourceUrl": "https://www.patriotenergysolution.com/"
+      },
+      {
+        "title": "Potential solar cannibalization",
+        "severity": "High",
+        "category": "Content",
+        "evidence": "Homepage title targets solar in Long Island/NYC while /go-solar/ and /company/ also target solar for same area",
+        "suggestion": "Assign: homepage brand+area, /go-solar/ solar benefits/process, /company/ brand proof; differentiate titles/H1s and cross-link",
+        "effort": "Medium",
+        "sourceUrl": "https://www.patriotenergysolution.com/go-solar/"
+      },
+      {
+        "title": "EmPower+ eligibility and savings claims need verification",
+        "severity": "High",
+        "category": "Content",
+        "evidence": "Manual review: /nyserda/ lists no-cost upgrades, up-to-30% language and income table that may date",
+        "suggestion": "Replace fixed figures with verify-current guidance, date of last review, and links to official NYSERDA/EmPower+ pages",
+        "effort": "Medium",
+        "sourceUrl": "https://www.patriotenergysolution.com/nyserda/"
+      },
+      {
+        "title": "Solar savings figures lack context",
+        "severity": "High",
+        "category": "Content",
+        "evidence": "Manual review: /go-solar/ cites percentage and multi-year dollar savings without methodology or date",
+        "suggestion": "Reframe as illustrative ranges, add assumptions, last-reviewed date, and consultation CTA; do not guarantee outcomes",
+        "effort": "Medium",
+        "sourceUrl": "https://www.patriotenergysolution.com/go-solar/"
+      },
+      {
+        "title": "Generic social metadata",
+        "severity": "Medium",
+        "category": "Technical",
+        "evidence": "Audit evidence: og:title values are Home, Company, NYSERDA, Go Solar",
+        "suggestion": "Set unique OG titles/descriptions/images per template; keep BBB badge only if intentional",
+        "effort": "Small",
+        "sourceUrl": "https://www.patriotenergysolution.com/"
+      },
+      {
+        "title": "Missing alt on homepage icons",
+        "severity": "Medium",
+        "category": "Accessibility",
+        "evidence": "Audit evidence: 12 images missing/empty alt, reported as repeated testimonial icons",
+        "suggestion": "Mark decorative icons aria-hidden with empty alt; write concise alt only for informative images",
+        "effort": "Small",
+        "sourceUrl": "https://www.patriotenergysolution.com/"
+      },
+      {
+        "title": "No dedicated audit/insulation/location pages in sample",
+        "severity": "Medium",
+        "category": "Local",
+        "evidence": "Scope note: four sampled URLs do not include standalone audit, insulation, weatherization or county/borough pages",
+        "suggestion": "Inventory the full site before creating pages. Where a coverage gap is confirmed, add useful service and location pages with original local evidence and internal links; avoid duplicate doorway pages.",
+        "effort": "Large",
+        "sourceUrl": "https://www.patriotenergysolution.com/nyserda/"
+      },
+      {
+        "title": "LocalBusiness schema needs validation",
+        "severity": "Medium",
+        "category": "Technical",
+        "evidence": "Audit evidence: LocalBusiness/PostalAddress/GeoCoordinates/OpeningHours present but @id reported empty",
+        "suggestion": "Validate with Rich Results Test, add stable @id, sameAs, areaServed, opening hours and service schema where fitting",
+        "effort": "Small",
+        "sourceUrl": "https://www.patriotenergysolution.com/"
+      },
+      {
+        "title": "Long complex lead forms may suppress conversion",
+        "severity": "Medium",
+        "category": "Conversion",
+        "evidence": "Manual review: homepage form requests address, bill upload/usage, interest and math captcha plus SMS consent",
+        "suggestion": "Split into short first step plus optional second step; clarify consent, response time and privacy link",
+        "effort": "Medium",
+        "sourceUrl": "https://www.patriotenergysolution.com/"
+      },
+      {
+        "title": "Expand practical NYSERDA application guidance",
+        "severity": "Low",
+        "category": "Content",
+        "evidence": "The sampled NYSERDA page has 415 extracted words. Word count alone is not a quality defect; review whether application steps, documents, eligibility links and common questions are adequately answered.",
+        "suggestion": "Expand with process, FAQs, service-area clarity and official-program links while keeping claims verifiable",
+        "effort": "Medium",
+        "sourceUrl": "https://www.patriotenergysolution.com/nyserda/"
+      }
+    ],
+    "contentPlan": [
+      {
+        "title": "Long Island Residential Solar: Process, Options and Consultation Prep",
+        "primaryKeyword": "residential solar installation Long Island",
+        "pageType": "Service hub (/go-solar/ refresh)",
+        "outline": [
+          "When solar fits Long Island homes and when efficiency should come first",
+          "Site evaluation to permission-to-operate steps",
+          "Equipment and roof considerations in plain language",
+          "Costs, incentives to verify, and questions to ask consultant",
+          "FAQs + free consultation CTA"
+        ],
+        "cta": "Book a free solar consultation"
+      },
+      {
+        "title": "Home Energy Audit in Long Island and NYC: What Gets Checked",
+        "primaryKeyword": "home energy audit Long Island",
+        "pageType": "New service page",
+        "outline": [
+          "What an audit covers: envelope, heating, safety checks",
+          "How to prepare and what report you receive",
+          "From audit to insulation and air sealing priorities",
+          "Audit vs EmPower+ assessment distinction",
+          "CTA to schedule audit"
+        ],
+        "cta": "Schedule your home energy audit"
+      },
+      {
+        "title": "EmPower+ New York Help: Upgrades, Process and How to Verify Eligibility",
+        "primaryKeyword": "EmPower+ New York insulation weatherization",
+        "pageType": "Program hub (/nyserda/ refresh)",
+        "outline": [
+          "What EmPower+ is and contractor assistance role",
+          "Typical upgrades described without eligibility promises",
+          "How application assistance works",
+          "Service areas served and contact path",
+          "Links to official program pages + last-reviewed date"
+        ],
+        "cta": "Ask about EmPower+ application help"
+      },
+      {
+        "title": "Attic, Crawlspace and Rim-Joist Insulation Guide for NY Homes",
+        "primaryKeyword": "attic insulation Long Island",
+        "pageType": "New service/guide",
+        "outline": [
+          "Signs of under-insulation and comfort complaints",
+          "Insulation areas and air-sealing pairing",
+          "Audit-first approach and what affects scope",
+          "Maintenance and safety notes",
+          "CTA for insulation assessment"
+        ],
+        "cta": "Get an insulation assessment"
+      },
+      {
+        "title": "NYC Weatherization and Air Sealing for Drafty Homes and High Bills",
+        "primaryKeyword": "air sealing and weatherization NYC",
+        "pageType": "New location-service page",
+        "outline": [
+          "Common NYC draft and moisture pathways by housing type",
+          "Weatherization measures in plain language",
+          "Renter vs owner next steps to verify",
+          "Audit tie-in and borough service notes",
+          "CTA to request evaluation"
+        ],
+        "cta": "Request a weatherization evaluation"
+      }
+    ],
+    "roadmap": [
+      {
+        "phase": "Days 1\u201330",
+        "title": "Trust, mapping and local foundations",
+        "actions": [
+          "Fix founding date, email domain, OG titles and decorative alt handling",
+          "Freeze page-to-keyword map and differentiate homepage, /go-solar/, /company/, /nyserda/ titles/H1s",
+          "Validate LocalBusiness schema, NAP consistency, Google Business Profile categories/services/areas",
+          "Add verify-current disclaimers and last-reviewed dates to savings and program claims",
+          "Simplify primary lead form above the fold and test submissions"
+        ],
+        "successMetric": "All four sampled pages show consistent NAP, unique titles/H1s, validated schema with no errors, and working lead submission"
+      },
+      {
+        "phase": "Days 31\u201360",
+        "title": "Service and location depth",
+        "actions": [
+          "Publish audit, attic insulation and NYC weatherization pages with internal linking",
+          "Expand /nyserda/ hub with process, FAQs and official program links",
+          "Launch Suffolk/Nassau/Queens-Brooklyn location hubs with unique proof and FAQs",
+          "Improve the existing testimonials page with service-labeled, permissioned client evidence.",
+          "Use Search Console query-to-page data to investigate suspected overlap. Consolidate or redirect only if duplicate intent is confirmed, preserving useful distinct pages."
+        ],
+        "successMetric": "New service/location pages indexed with internal links from homepage/nav and measurable contact clicks/calls"
+      },
+      {
+        "phase": "Days 61\u201390",
+        "title": "Authority, conversion and technical follow-up",
+        "actions": [
+          "Review the existing financing and post-installation pages; improve process and maintenance guidance with accurate, qualified language.",
+          "Publish useful visible FAQs and validate applicable business schema. Google retired FAQ rich results in May 2026; do not sell this as a rich-result tactic.",
+          "Run accessibility check (contrast, focus, form labels) and page-speed review with image optimization",
+          "Refresh robots/sitemap review and monitor Search Console coverage, queries and local actions",
+          "Document incentive-review cadence with owner for quarterly verification"
+        ],
+        "successMetric": "Compare Search Console impressions, clicks and consultation events against an established baseline; record outcomes and next actions without a guaranteed growth target."
+      }
+    ],
+    "optimized": {
+      "title": "Solar Panels Long Island & NYC | Audits, Insulation & EmPower+ Help",
+      "metaDescription": "Patriot Energy Solutions installs residential solar and helps Long Island & NYC homes with energy audits, insulation and weatherization. Ask about EmPower+ application help and a free consultation.",
+      "h1": "Residential Solar, Energy Audits and Home Efficiency for Long Island & NYC"
+    }
+  },
+  "sources": [
+    {
+      "url": "https://www.sunation.com/",
+      "title": "Long Island Solar Company | Solar Panel Systems - SUNation Energy"
+    },
+    {
+      "url": "https://www.lipowersolutions.com/",
+      "title": "Home Page - Solar on Long Island"
+    },
+    {
+      "url": "https://www.greenteamli.com/",
+      "title": "Home Comfort & Efficiency Contractor | Green Team LI | Long Island"
+    },
+    {
+      "url": "http://marcorny.com/",
+      "title": "Home - Marcor"
+    },
+    {
+      "url": "https://marcorny.com/",
+      "title": "Marcor \u2014 first-party site checked 2026-09-13"
+    },
+    {
+      "url": "https://www.empower-solar.com/",
+      "title": "EmPower Solar closure notice: excluded from active competitors"
+    },
+    {
+      "url": "https://developers.google.com/search/updates",
+      "title": "Google Search documentation: FAQ rich results retired May 7, 2026"
+    }
+  ],
+  "model": "meta/muse-spark-1.3",
+  "aiStatus": "complete",
+  "aiCost": 0.0930221325,
+  "tasks": [
+    {
+      "id": "task-0",
+      "title": "Clarify the company founding timeline",
+      "priority": "High",
+      "status": "todo",
+      "dueDate": "",
+      "notes": "Choose one verified timeline, align homepage/company/footer, add source or milestone proof"
+    },
+    {
+      "id": "task-1",
+      "title": "Contact email domain mismatch",
+      "priority": "High",
+      "status": "todo",
+      "dueDate": "",
+      "notes": "Verify correct mailbox, standardize sitewide, test forms and mail delivery"
+    },
+    {
+      "id": "task-2",
+      "title": "Clarify homepage service pathways",
+      "priority": "High",
+      "status": "todo",
+      "dueDate": "",
+      "notes": "Make homepage a gateway; move depth to /go-solar/, /nyserda/, and new audit/insulation/location pages with one primary keyword each"
+    },
+    {
+      "id": "task-3",
+      "title": "Potential solar cannibalization",
+      "priority": "High",
+      "status": "todo",
+      "dueDate": "",
+      "notes": "Assign: homepage brand+area, /go-solar/ solar benefits/process, /company/ brand proof; differentiate titles/H1s and cross-link"
+    },
+    {
+      "id": "task-4",
+      "title": "EmPower+ eligibility and savings claims need verification",
+      "priority": "High",
+      "status": "todo",
+      "dueDate": "",
+      "notes": "Replace fixed figures with verify-current guidance, date of last review, and links to official NYSERDA/EmPower+ pages"
+    },
+    {
+      "id": "task-5",
+      "title": "Solar savings figures lack context",
+      "priority": "High",
+      "status": "todo",
+      "dueDate": "",
+      "notes": "Reframe as illustrative ranges, add assumptions, last-reviewed date, and consultation CTA; do not guarantee outcomes"
+    },
+    {
+      "id": "task-6",
+      "title": "Generic social metadata",
+      "priority": "Medium",
+      "status": "todo",
+      "dueDate": "",
+      "notes": "Set unique OG titles/descriptions/images per template; keep BBB badge only if intentional"
+    },
+    {
+      "id": "task-7",
+      "title": "Missing alt on homepage icons",
+      "priority": "Medium",
+      "status": "todo",
+      "dueDate": "",
+      "notes": "Mark decorative icons aria-hidden with empty alt; write concise alt only for informative images"
+    },
+    {
+      "id": "task-8",
+      "title": "No dedicated audit/insulation/location pages in sample",
+      "priority": "Medium",
+      "status": "todo",
+      "dueDate": "",
+      "notes": "Inventory the full site before creating pages. Where a coverage gap is confirmed, add useful service and location pages with original local evidence and internal links; avoid duplicate doorway pages."
+    },
+    {
+      "id": "task-9",
+      "title": "LocalBusiness schema needs validation",
+      "priority": "Medium",
+      "status": "todo",
+      "dueDate": "",
+      "notes": "Validate with Rich Results Test, add stable @id, sameAs, areaServed, opening hours and service schema where fitting"
+    },
+    {
+      "id": "task-10",
+      "title": "Long complex lead forms may suppress conversion",
+      "priority": "Medium",
+      "status": "todo",
+      "dueDate": "",
+      "notes": "Split into short first step plus optional second step; clarify consent, response time and privacy link"
+    },
+    {
+      "id": "task-11",
+      "title": "Expand practical NYSERDA application guidance",
+      "priority": "Low",
+      "status": "todo",
+      "dueDate": "",
+      "notes": "Expand with process, FAQs, service-area clarity and official-program links while keeping claims verifiable"
+    }
+  ],
+  "rankings": [],
+  "agency": "SEO Analytic Studio",
+  "preparedBy": "Debashis Dey",
+  "fee": null,
+  "currency": "USD",
+  "notes": "Baseline prepared with Muse Spark 1.3 and reviewed for source relevance. Existing financing, post-installation, testimonials and contact URLs were retained in the keyword plan. Verify program details and business facts with the client before delivery. No fee has been set and no ranking observations have been recorded."
+}
