@@ -48,7 +48,7 @@ const VercelDeployModal: React.FC<VercelDeployModalProps> = ({
   }, []);
 
   const processZipFile = async (file: File) => {
-    const JSZip = (await import('https://esm.sh/jszip@3.10.1')).default;
+    const JSZip = (await import('jszip')).default;
     const zip = await JSZip.loadAsync(file);
     const entries: FileEntry[] = [];
 

@@ -1,0 +1,26 @@
+{
+  "url": "https://www.patriotenergysolution.com/",
+  "analyzedAt": "2026-09-12T17:44:01.052Z",
+  "source": "saved HTML downloaded from origin using curl",
+  "htmlSha256": "67297d46a74dde2f65ac555e2d0759ddb10d3c429778aea9964f8e75d03cee11",
+  "checklistScore": 95,
+  "checksPassed": 14,
+  "checksTotal": 15,
+  "wordCount": 1323,
+  "h1Count": 1,
+  "h2Count": 8,
+  "images": 30,
+  "imagesMissingAlt": 12,
+  "internalLinks": 59,
+  "externalLinks": 8,
+  "schemaTypes": [
+    "LocalBusiness",
+    "PostalAddress",
+    "GeoCoordinates",
+    "OpeningHoursSpecification",
+    "Organization",
+    "ImageObject"
+  ],
+  "performance": "not measured",
+  "actualGoogleIndexing": "not measured"
+}

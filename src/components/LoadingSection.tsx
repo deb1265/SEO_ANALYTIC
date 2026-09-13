@@ -11,7 +11,7 @@ interface LoadingSectionProps {
 const steps = [
   { id: 'extract', label: 'Extract Content' },
   { id: 'keywords', label: 'Fetch Keywords' },
-  { id: 'analyze', label: 'AI Analysis' },
+  { id: 'analyze', label: 'Optional AI' },
   { id: 'score', label: 'Calculate Scores' },
   { id: 'recommend', label: 'Generate Recommendations' }
 ];
@@ -39,7 +39,7 @@ const LoadingSection: React.FC<LoadingSectionProps> = ({ progress, status, curre
           </div>
         </div>
         
-        <h3>AI is Analyzing Your Page...</h3>
+        <h3>Checking Your Page…</h3>
         <p className="loading-status">{status}</p>
         
         <div className="progress-container">

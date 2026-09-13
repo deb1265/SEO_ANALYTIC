@@ -1,34 +1,57 @@
 
 import { ExtractedContent, HeadingStructure, ImageData, LinkData } from '../types';
 
-export async function fetchPageContent(url: string): Promise<string> {
-  const corsProxies = [
-    `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`,
-    `https://corsproxy.io/?${encodeURIComponent(url)}`,
-    `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(url)}`
-  ];
+import { normalizeUrl } from './url';
 
-  for (const proxyUrl of corsProxies) {
+export const MAX_HTML_BYTES = 5 * 1024 * 1024;
+
+export async function fetchPageContent(input: string, allowProxies = false): Promise<string> {
+  const url = normalizeUrl(input);
+  const candidates = [url];
+  if (allowProxies) candidates.push(
+    `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`,
+    `https://corsproxy.io/?${encodeURIComponent(url)}`
+  );
+  for (const target of candidates) {
     try {
-      const response = await fetch(proxyUrl, { 
-        headers: { 'Accept': 'text/html' }
+      const response = await fetch(target, {
+        headers: { Accept: 'text/html' }, credentials: 'omit',
+        signal: AbortSignal.timeout(12000)
       });
-      if (response.ok) {
-        return await response.text();
-      }
-    } catch (e) {
-      console.log('Proxy failed, trying next...', e);
-    }
+      if (!response.ok) continue;
+      const type = response.headers.get('content-type') || '';
+      if (!/text\/html|application\/xhtml\+xml/i.test(type)) continue;
+      if (Number(response.headers.get('content-length')) > MAX_HTML_BYTES) continue;
+      const reader = response.body?.getReader();
+      if (!reader) continue;
+      const decoder = new TextDecoder();
+      let html = '', bytes = 0;
+      try {
+        while (true) {
+          const { value, done } = await reader.read();
+          if (done) break;
+          bytes += value.byteLength;
+          if (bytes > MAX_HTML_BYTES) throw new Error('Page exceeds 5 MB.');
+          html += decoder.decode(value, { stream: true });
+        }
+        html += decoder.decode();
+      } finally { await reader.cancel(); }
+      if (html.trim() && /<(?:html|head|body|title)[\s>]/i.test(html)) return html;
+    } catch { /* CORS, timeouts and rejected responses try the next allowed source. */ }
   }
-  
-  return '';
+  throw new Error('Could not retrieve HTML. The website may block browser access. Import saved page HTML or enable public proxies for a public URL. No audit was generated.');
 }
 
-export function extractContentFromHTML(html: string, url: string): ExtractedContent {
-  const parser = new DOMParser();
-  const doc = parser.parseFromString(html || '<html><body></body></html>', 'text/html');
+export function extractContentFromHTML(html: string, url: string, providedDocument?: Document): ExtractedContent {
+  if (!html.trim()) throw new Error('Cannot audit an empty page.');
+  if (new TextEncoder().encode(html).byteLength > MAX_HTML_BYTES) throw new Error('HTML exceeds 5 MB.');
+  url = normalizeUrl(url);
+  const doc = providedDocument || new DOMParser().parseFromString(html, 'text/html');
   const urlObj = new URL(url);
   const domain = urlObj.hostname;
+  if (!doc.body?.textContent?.trim() && !doc.title) throw new Error('No page content found.');
+  let base = url;
+  try { base = new URL(doc.querySelector('base[href]')?.getAttribute('href') || url, url).href; } catch {}
   
   // Extract title
   const title = doc.querySelector('title')?.textContent?.trim() || '';
@@ -54,6 +77,11 @@ export function extractContentFromHTML(html: string, url: string): ExtractedCont
     docClone.querySelectorAll(tag).forEach(el => el.remove());
   });
   
+  // Preserve word boundaries between block elements, even in minified HTML.
+  docClone.querySelectorAll('p,div,section,article,h1,h2,h3,h4,h5,h6,li,ul,ol,br,td,th').forEach(el => {
+    el.prepend(docClone.createTextNode(' '));
+    el.append(docClone.createTextNode(' '));
+  });
   // Get text content
   const bodyText = docClone.body?.textContent || '';
   const cleanText = bodyText.replace(/\s+/g, ' ').trim();
@@ -70,7 +98,7 @@ export function extractContentFromHTML(html: string, url: string): ExtractedCont
   const images: ImageData[] = [];
   doc.querySelectorAll('img').forEach(img => {
     images.push({
-      src: img.getAttribute('src') || '',
+      src: img.getAttribute('src') || img.getAttribute('data-src') || '',
       alt: img.getAttribute('alt') || '',
       hasAlt: !!img.getAttribute('alt')?.trim()
     });
@@ -82,17 +110,20 @@ export function extractContentFromHTML(html: string, url: string): ExtractedCont
   doc.querySelectorAll('a[href]').forEach(a => {
     const href = a.getAttribute('href');
     const text = a.textContent?.trim().substring(0, 50) || '';
-    if (href?.startsWith('/') || href?.includes(domain)) {
-      internalLinks.push({ href, text });
-    } else if (href?.startsWith('http')) {
-      externalLinks.push({ href, text });
-    }
+    if (!href || href.startsWith('#')) return;
+    try {
+      const resolved = new URL(href, base);
+      if (!['http:', 'https:'].includes(resolved.protocol)) return;
+      const link = { href: resolved.href, text };
+      if (resolved.hostname === domain) internalLinks.push(link);
+      else externalLinks.push(link);
+    } catch { /* Ignore malformed and non-web links. */ }
   });
   
   // Extract meta tags and technical elements
   const canonical = doc.querySelector('link[rel="canonical"]')?.getAttribute('href') || '';
   const viewport = doc.querySelector('meta[name="viewport"]')?.getAttribute('content') || '';
-  const robots = doc.querySelector('meta[name="robots"]')?.getAttribute('content') || '';
+  const robots = Array.from(doc.querySelectorAll('meta[name]')).filter(el => ['robots', 'googlebot'].includes((el.getAttribute('name') || '').toLowerCase())).map(el => el.getAttribute('content') || '').join(', ').toLowerCase();
   const ogTitle = doc.querySelector('meta[property="og:title"]')?.getAttribute('content') || '';
   const ogDesc = doc.querySelector('meta[property="og:description"]')?.getAttribute('content') || '';
   const twitterCard = doc.querySelector('meta[name="twitter:card"]')?.getAttribute('content') || '';
@@ -104,7 +135,15 @@ export function extractContentFromHTML(html: string, url: string): ExtractedCont
   schemaScripts.forEach(script => {
     try {
       const schema = JSON.parse(script.textContent || '{}');
-      if (schema['@type']) schemas.push(schema['@type']);
+      const visit = (node: unknown): void => {
+        if (Array.isArray(node)) { node.forEach(visit); return; }
+        if (!node || typeof node !== 'object') return;
+        const obj = node as Record<string, unknown>;
+        const types = Array.isArray(obj['@type']) ? obj['@type'] : [obj['@type']];
+        types.forEach(type => { if (typeof type === 'string' && !schemas.includes(type)) schemas.push(type); });
+        Object.values(obj).forEach(visit);
+      };
+      visit(schema);
     } catch (e) {}
   });
 
@@ -130,7 +169,7 @@ export function extractContentFromHTML(html: string, url: string): ExtractedCont
     twitterCard,
     lang,
     schemas,
-    isHttps: url.startsWith('https'),
+    isHttps: urlObj.protocol === 'https:',
     urlLength: url.length
   };
 }
