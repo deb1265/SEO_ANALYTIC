@@ -13,11 +13,8 @@ test("refresh clears the session key, preserves progress and renders the full St
     .fill("sk-or-v1-test-only");
   await page.getByRole("button", { name: "Use key for this tab" }).click();
   await expect(page.getByRole("button", { name: "Clear key" })).toBeVisible();
-  await page.getByRole("button", { name: "Action plan", exact: true }).click();
-  const state = page
-    .locator("select")
-    .filter({ has: page.locator('option[value="done"]') })
-    .first();
+  await page.getByRole("button", { name: "Progress", exact: true }).click();
+  const state = page.getByRole("combobox", { name: /^Status for / }).first();
   await state.selectOption("done");
   await expect(
     page.getByRole("status").filter({ hasText: "Changes saved" }),
@@ -27,12 +24,9 @@ test("refresh clears the session key, preserves progress and renders the full St
     page.getByLabel("OpenRouter API key", { exact: true }),
   ).toHaveValue("");
   await expect(page.getByRole("button", { name: "Clear key" })).toHaveCount(0);
-  await page.getByRole("button", { name: "Action plan", exact: true }).click();
+  await page.getByRole("button", { name: "Progress", exact: true }).click();
   await expect(
-    page
-      .locator("select")
-      .filter({ has: page.locator('option[value="done"]') })
-      .first(),
+    page.getByRole("combobox", { name: /^Status for / }).first(),
   ).toHaveValue("done");
   const stored = await page.evaluate(() =>
     JSON.stringify({ ...localStorage, ...sessionStorage }),
