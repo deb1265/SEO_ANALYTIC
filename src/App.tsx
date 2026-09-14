@@ -351,7 +351,7 @@ export default function App() {
           <div className="s-top-actions">
             <span className="s-private">
               <ShieldCheck size={15} />{" "}
-              {isVercelRuntime ? "Saved in this browser" : "Private"}
+              {isVercelRuntime ? "Browser reports" : "Private"}
             </span>
             <div className="s-avatar small">
               {isVercelRuntime ? "SA" : "DD"}

@@ -33,11 +33,26 @@ test("refresh clears the session key, preserves progress and renders the full St
   );
   expect(stored).not.toContain("sk-or-v1");
   await page.setViewportSize({ width: 390, height: 844 });
+  const layout = await page.evaluate(() => ({
+    viewport: innerWidth,
+    scrollWidth: document.documentElement.scrollWidth,
+    overflow: [...document.querySelectorAll("body *")]
+      .filter(
+        (element) =>
+          element.getBoundingClientRect().right > innerWidth + 1 &&
+          !element.closest(".s-table-wrap"),
+      )
+      .map((element) => ({
+        tag: element.tagName,
+        className: element.getAttribute("class"),
+        width: element.getBoundingClientRect().width,
+      }))
+      .slice(0, 20),
+  }));
   expect(
-    await page.evaluate(
-      () => document.documentElement.scrollWidth <= innerWidth,
-    ),
-  ).toBe(true);
+    layout.scrollWidth,
+    JSON.stringify(layout.overflow),
+  ).toBeLessThanOrEqual(layout.viewport);
   expect(errors).toEqual([]);
 });
 test("creates a measured report without a key and exports a PDF", async ({
@@ -50,15 +65,13 @@ test("creates a measured report without a key and exports a PDF", async ({
   await page.getByLabel("Business focus").fill("Home energy improvements");
   await page.getByLabel("Include Muse Spark").uncheck();
   await page.getByText("Website blocks automated access?").click();
-  await page
-    .getByLabel("Import saved homepage HTML")
-    .setInputFiles({
-      name: "sample.html",
-      mimeType: "text/html",
-      buffer: Buffer.from(
-        '<html lang="en"><head><title>Home energy improvements</title></head><body><h1>Comfortable homes</h1><p>Services for local homeowners.</p></body></html>',
-      ),
-    });
+  await page.getByLabel("Import saved homepage HTML").setInputFiles({
+    name: "sample.html",
+    mimeType: "text/html",
+    buffer: Buffer.from(
+      '<html lang="en"><head><title>Home energy improvements</title></head><body><h1>Comfortable homes</h1><p>Services for local homeowners.</p></body></html>',
+    ),
+  });
   await page
     .getByRole("button", { name: "Create report", exact: true })
     .click();
