@@ -1,7 +1,7 @@
 
-import { ExtractedContent, HeadingStructure, ImageData, LinkData } from '../types';
+import type { ExtractedContent, HeadingStructure, ImageData, LinkData } from '../types.js';
 
-import { normalizeUrl } from './url';
+import { normalizeUrl } from './url.js';
 
 export const MAX_HTML_BYTES = 5 * 1024 * 1024;
 

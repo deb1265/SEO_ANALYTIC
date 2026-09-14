@@ -1,5 +1,5 @@
-import type { SeoReport, Strategy } from "./types";
-import { safeUrl } from "./public-url";
+import type { SeoReport, Strategy } from "./types.js";
+import { safeUrl } from "./public-url.js";
 const string = (v: unknown, max = 3000) =>
   typeof v === "string" ? v.slice(0, max) : "";
 const texts = (v: unknown, max = 20) =>

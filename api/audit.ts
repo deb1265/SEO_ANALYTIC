@@ -1,5 +1,5 @@
-import { collectPages, pageFinding } from "../server/analysis";
-import { safeUrl } from "../src/pro/public-url";
+import { collectPages, pageFinding } from "../server/analysis.js";
+import { safeUrl } from "../src/pro/public-url.js";
 const json = (data: unknown, status = 200) =>
   Response.json(data, {
     status,

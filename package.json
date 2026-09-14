@@ -15,7 +15,8 @@
     "build:static": "tsc && vite build --mode static --outDir dist",
     "dev:vercel": "STUDIO_RUNTIME=vercel node scripts/dev.mjs",
     "build:vercel": "tsc && tsc -p tsconfig.server.json && vite build --mode vercel --outDir dist/client && node scripts/write-build-info.mjs",
-    "test:browser:vercel": "playwright test --config playwright.vercel.config.ts"
+    "test:browser:vercel": "playwright test --config playwright.vercel.config.ts",
+    "test:vercel-runtime": "node scripts/verify-vercel-runtime.mjs"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.7.2",

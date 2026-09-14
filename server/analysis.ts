@@ -1,9 +1,9 @@
 import { DOMParser } from "linkedom";
 import robotsParser from "robots-parser";
-import { extractContentFromHTML } from "../src/utils/contentExtractor";
-import { auditPage, getChecks } from "../src/utils/audit";
-import { fetchPublic, safeUrl } from "./fetch-page";
-import type { PageFinding } from "../src/pro/types";
+import { extractContentFromHTML } from "../src/utils/contentExtractor.js";
+import { auditPage, getChecks } from "../src/utils/audit.js";
+import { fetchPublic, safeUrl } from "./fetch-page.js";
+import type { PageFinding } from "../src/pro/types.js";
 
 export function pageFinding(
   html: string,
@@ -168,4 +168,4 @@ export {
   validateStrategy,
   parseModelJSON,
   analysisPrompt,
-} from "../src/pro/strategy";
+} from "../src/pro/strategy.js";

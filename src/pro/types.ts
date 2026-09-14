@@ -20,7 +20,7 @@ export interface PageFinding {
   description: string;
   h1: string[];
   score: number;
-  scores: import("../types").Scores;
+  scores: import("../types.js").Scores;
   wordCount: number;
   images: number;
   missingAlt: number;

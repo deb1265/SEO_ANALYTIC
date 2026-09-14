@@ -99,6 +99,7 @@ npm run test:server
 npx playwright install chromium
 npm run test:browser
 npm run build:vercel
+npm run test:vercel-runtime
 npm run test:browser:vercel
 ```
 

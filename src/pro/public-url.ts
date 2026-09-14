@@ -1,4 +1,4 @@
-import { normalizeUrl } from "../utils/url";
+import { normalizeUrl } from "../utils/url.js";
 const LOCAL_SUFFIXES = [
   ".local",
   ".internal",

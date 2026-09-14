@@ -1,5 +1,5 @@
-import { safeUrl } from "../src/pro/public-url";
-export { safeUrl } from "../src/pro/public-url";
+import { safeUrl } from "../src/pro/public-url.js";
+export { safeUrl } from "../src/pro/public-url.js";
 function publicAddress(ip: string) {
   if (ip.includes(":"))
     return /^(2|3)[0-9a-f]{3}:/i.test(ip) && !/^2001:(db8|0:)/i.test(ip);
