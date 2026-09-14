@@ -33,26 +33,29 @@ test("refresh clears the session key, preserves progress and renders the full St
   );
   expect(stored).not.toContain("sk-or-v1");
   await page.setViewportSize({ width: 390, height: 844 });
-  const layout = await page.evaluate(() => ({
-    viewport: innerWidth,
-    scrollWidth: document.documentElement.scrollWidth,
-    overflow: [...document.querySelectorAll("body *")]
-      .filter(
-        (element) =>
-          element.getBoundingClientRect().right > innerWidth + 1 &&
-          !element.closest(".s-table-wrap"),
-      )
-      .map((element) => ({
-        tag: element.tagName,
-        className: element.getAttribute("class"),
-        width: element.getBoundingClientRect().width,
-      }))
-      .slice(0, 20),
-  }));
-  expect(
-    layout.scrollWidth,
-    JSON.stringify(layout.overflow),
-  ).toBeLessThanOrEqual(layout.viewport);
+  // Responsive charts resize through ResizeObserver after the viewport changes.
+  await expect(async () => {
+    const layout = await page.evaluate(() => ({
+      viewport: innerWidth,
+      scrollWidth: document.documentElement.scrollWidth,
+      overflow: [...document.querySelectorAll("body *")]
+        .filter(
+          (element) =>
+            element.getBoundingClientRect().right > innerWidth + 1 &&
+            !element.closest(".s-table-wrap"),
+        )
+        .map((element) => ({
+          tag: element.tagName,
+          className: element.getAttribute("class"),
+          width: element.getBoundingClientRect().width,
+        }))
+        .slice(0, 20),
+    }));
+    expect(
+      layout.scrollWidth,
+      JSON.stringify(layout.overflow),
+    ).toBeLessThanOrEqual(layout.viewport);
+  }).toPass({ timeout: 5000 });
   expect(errors).toEqual([]);
 });
 test("creates a measured report without a key and exports a PDF", async ({
