@@ -1,5 +1,22 @@
 {
-  "buildCommand": "npm run build:static",
+  "framework": "vite",
+  "buildCommand": "npm run build:vercel",
   "installCommand": "npm ci",
-  "outputDirectory": "dist"
+  "outputDirectory": "dist/client",
+  "functions": {
+    "api/audit.ts": {
+      "maxDuration": 300
+    }
+  },
+  "headers": [
+    {
+      "source": "/index.html",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-cache"
+        }
+      ]
+    }
+  ]
 }
