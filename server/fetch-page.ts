@@ -1,25 +1,5 @@
-import { normalizeUrl } from "../src/utils/url";
-const LOCAL_SUFFIXES = [
-  ".local",
-  ".internal",
-  ".localhost",
-  ".home",
-  ".lan",
-  ".test",
-  ".invalid",
-  ".onion",
-];
-export function safeUrl(value: string) {
-  const url = new URL(normalizeUrl(value));
-  if (
-    (url.port && !["80", "443"].includes(url.port)) ||
-    LOCAL_SUFFIXES.some((s) => url.hostname.endsWith(s))
-  )
-    throw new Error(
-      "Only public HTTP(S) websites on standard ports are supported.",
-    );
-  return url.href;
-}
+import { safeUrl } from "../src/pro/public-url";
+export { safeUrl } from "../src/pro/public-url";
 function publicAddress(ip: string) {
   if (ip.includes(":"))
     return /^(2|3)[0-9a-f]{3}:/i.test(ip) && !/^2001:(db8|0:)/i.test(ip);

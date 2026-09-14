@@ -3,7 +3,9 @@ import { createServer } from "node:http";
 import { mkdirSync } from "node:fs";
 import { openDatabase } from "./sqlite-d1.mjs";
 mkdirSync(".sites-runtime", { recursive: true });
+const isVercel = process.env.STUDIO_RUNTIME === "vercel";
 const vite = await viteServer({
+  mode: isVercel ? "vercel" : "development",
   server: { middlewareMode: true },
   appType: "spa",
 });
@@ -16,7 +18,9 @@ const port = Number(process.env.PORT || 5173);
 createServer(async (req, res) => {
   if (!req.url.startsWith("/api/")) return vite.middlewares(req, res);
   try {
-    const { handleApi } = await vite.ssrLoadModule("/server/api.ts");
+    const handleApi = isVercel
+      ? (await vite.ssrLoadModule("/api/audit.ts")).handleAudit
+      : (await vite.ssrLoadModule("/server/api.ts")).handleApi;
     const chunks = [];
     let size = 0;
     for await (const c of req) {

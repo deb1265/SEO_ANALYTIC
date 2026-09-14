@@ -43,6 +43,9 @@ import type { SeoReport } from "./pro/types";
 import { exportJSON } from "./pro/download";
 import LegacyAudit from "./LegacyAudit";
 import "./pro/studio.css";
+import { studioApi as api, isVercelRuntime } from "./pro/client-api";
+import SessionKeyPanel from "./pro/SessionKeyPanel";
+import { hasSessionKey, subscribeSessionKey } from "./pro/session-key";
 const icons = {
   Overview: LayoutDashboard,
   Issues: ShieldCheck,
@@ -53,23 +56,6 @@ const icons = {
   Reports: FileText,
 };
 const palette = ["#7259ed", "#38b5b2", "#f5af4c", "#ec6f88"];
-async function api(path: string, method = "GET", body?: unknown) {
-  const response = await fetch(path, {
-    method,
-    headers: body ? { "Content-Type": "application/json" } : undefined,
-    body: body ? JSON.stringify(body) : undefined,
-  });
-  let data: any;
-  try {
-    data = await response.json();
-  } catch {
-    throw new Error(
-      "The workspace is temporarily unavailable. Please try again.",
-    );
-  }
-  if (!response.ok) throw new Error(data.error || "Request failed");
-  return data;
-}
 function Tag({
   children,
   tone = "neutral",
@@ -143,7 +129,7 @@ export default function App() {
     maxPages: 3,
     useAI: true,
     agency: "SEO Analytic",
-    preparedBy: "Debashis Dey",
+    preparedBy: isVercelRuntime ? "" : "Debashis Dey",
     fee: "",
     html: "",
   });
@@ -179,6 +165,10 @@ export default function App() {
   }
   useEffect(() => {
     void load();
+    if (isVercelRuntime)
+      return subscribeSessionKey(() =>
+        setConfig((old: any) => ({ ...old, aiConfigured: hasSessionKey() })),
+      );
   }, []);
   useEffect(() => {
     if (report) {
@@ -303,9 +293,14 @@ export default function App() {
           </span>
         </div>
         <div className="s-workspace">
-          <div className="s-avatar">DD</div>
+          <div className="s-avatar">{isVercelRuntime ? "SA" : "DD"}</div>
           <div>
-            Debashis Dey<small>Private workspace</small>
+            {isVercelRuntime ? "Your workspace" : "Debashis Dey"}
+            <small>
+              {isVercelRuntime
+                ? "Reports in this browser"
+                : "Private workspace"}
+            </small>
           </div>
           <ShieldCheck size={15} />
         </div>
@@ -335,7 +330,9 @@ export default function App() {
               Muse Spark 1.3
               <small>
                 {config.aiConfigured
-                  ? "Server key connected"
+                  ? isVercelRuntime
+                    ? "Session key active"
+                    : "Server key connected"
                   : "AI setup required"}
               </small>
             </div>
@@ -353,9 +350,12 @@ export default function App() {
           </div>
           <div className="s-top-actions">
             <span className="s-private">
-              <ShieldCheck size={15} /> Private
+              <ShieldCheck size={15} />{" "}
+              {isVercelRuntime ? "Browser reports" : "Private"}
             </span>
-            <div className="s-avatar small">DD</div>
+            <div className="s-avatar small">
+              {isVercelRuntime ? "SA" : "DD"}
+            </div>
           </div>
         </header>
         <main className="s-body">
@@ -373,6 +373,13 @@ export default function App() {
             </div>
             <div className="s-actions">{headerActions}</div>
           </div>
+          {isVercelRuntime && <SessionKeyPanel />}
+          {isVercelRuntime && (
+            <p className="s-storage-note">
+              Reports and progress stay in this browser. Export JSON or PDF for
+              a backup before clearing site data.
+            </p>
+          )}
           {error && (
             <div role="alert" className="s-alert">
               <TriangleAlert size={18} />
@@ -1516,6 +1523,7 @@ export default function App() {
                   />
                 </label>
               </div>
+              {isVercelRuntime && <SessionKeyPanel />}
               <label className="s-checkbox">
                 <input
                   type="checkbox"

@@ -12,7 +12,10 @@
     "audit:html": "node scripts/audit-html.mjs",
     "db:generate": "drizzle-kit generate",
     "test:server": "node --test tests/server.test.mjs",
-    "build:static": "tsc && vite build --mode static --outDir dist"
+    "build:static": "tsc && vite build --mode static --outDir dist",
+    "dev:vercel": "STUDIO_RUNTIME=vercel node scripts/dev.mjs",
+    "build:vercel": "tsc && tsc -p tsconfig.server.json && vite build --mode vercel --outDir dist/client && node scripts/write-build-info.mjs",
+    "test:browser:vercel": "playwright test --config playwright.vercel.config.ts"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.7.2",
@@ -35,6 +38,7 @@
     "@vitejs/plugin-react": "^5.2.0",
     "drizzle-kit": "^0.31.10",
     "esbuild": "^0.28.2",
+    "fake-indexeddb": "^6.2.5",
     "jsdom": "^26.1.0",
     "typescript": "^5.6.3",
     "vite": "^7.3.6",

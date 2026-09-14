@@ -17,6 +17,7 @@
     "server/api.ts",
     "server/analysis.ts",
     "server/db.ts",
-    "server/fetch-page.ts"
+    "server/fetch-page.ts",
+    "api/audit.ts"
   ]
 }
